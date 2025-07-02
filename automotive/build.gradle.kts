@@ -1,28 +1,11 @@
-import java.net.URI
 
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    id("maven-publish")
-
 }
 
 kotlin {
     jvmToolchain(17)
-}
-
-publishing {
-
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = URI("https://maven.pkg.github.com/lorenzopaolo-cocchinone/automotive-sdk")
-            credentials {
-                username = System.getenv("GITHUB_ACTOR")
-                password = System.getenv("GITHUB_TOKEN")
-            }
-        }
-    }
 }
 
 android {
