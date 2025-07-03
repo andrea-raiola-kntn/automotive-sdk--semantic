@@ -1,5 +1,47 @@
 # Changelog
 
+## [1.2.1](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.2.0...v1.2.1) (2025-07-03)
+
+
+### Bug Fixes
+
+* update comment on pr ([0b98727](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/0b98727bde2eda2070fd051663da35ecc7254b28))
+
+## [1.2.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.1.3...v1.2.0) (2025-07-03)
+
+
+### Features
+
+* added test check on develop pull request ([57efd7d](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/57efd7d61263ab49db45cce4c3fa4d65281df091))
+
+## [1.1.3](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.1.2...v1.1.3) (2025-07-03)
+
+
+### Bug Fixes
+
+* start publish script when version.txt change ([5ad79f8](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/5ad79f812e6132e49bd66aaaa90150591b2ebc72))
+
+## [1.1.2](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.1.1...v1.1.2) (2025-07-03)
+
+
+### Bug Fixes
+
+* publish workflow on tags ([a5bdfe4](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/a5bdfe4068be17248350124bdec138586b0e87bb))
+
+## [1.1.1](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.1.0...v1.1.1) (2025-07-03)
+
+
+### Bug Fixes
+
+* publish workflow ([b8fe1c0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/b8fe1c0e7194d557c7aa609088857926b3a77087))
+
+## [1.1.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.0.0...v1.1.0) (2025-07-03)
+
+
+### Features
+
+* added versioning of library ([c57b7fc](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/c57b7fc87d68c37be6f9836c9e6c4f786b50a9a4))
+
 ## 1.0.0 (2025-07-03)
 
 
