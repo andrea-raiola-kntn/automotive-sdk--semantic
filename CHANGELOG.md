@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.0.0...v1.1.0) (2025-07-03)
+
+
+### Features
+
+* added versioning of library ([c57b7fc](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/c57b7fc87d68c37be6f9836c9e6c4f786b50a9a4))
+
 ## 1.0.0 (2025-07-03)
 
 
