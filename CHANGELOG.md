@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.1.2...v1.1.3) (2025-07-03)
+
+
+### Bug Fixes
+
+* start publish script when version.txt change ([5ad79f8](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/5ad79f812e6132e49bd66aaaa90150591b2ebc72))
+
 ## [1.1.2](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.1.1...v1.1.2) (2025-07-03)
 
 
