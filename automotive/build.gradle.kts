@@ -8,27 +8,31 @@ kotlin {
     jvmToolchain(17)
 }
 
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            groupId = "com.kineton.automotive"
-            artifactId = "sdk"
-            version = "0.0.1"
-            artifact("${layout.buildDirectory}/outputs/aar/automotive-release.aar")
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+                groupId = "com.kineton.automotive"
+                artifactId = "sdk"
+                version = "0.0.1"
+                artifact("$buildDir/outputs/aar/automotive-release.aar")
+            }
         }
-    }
 
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/lorenzopaolo-cocchinone/automotive-sdk")
-            credentials {
-                username = System.getenv("USERNAME_GITHUB")
-                password = System.getenv("TOKEN_GITHUB")
+        repositories {
+            maven {
+                name = "GitHubPackages"
+                url = uri("https://maven.pkg.github.com/lorenzopaolo-cocchinone/automotive-sdk")
+                credentials {
+                    username = System.getenv("USERNAME_GITHUB")
+                    password = System.getenv("TOKEN_GITHUB")
+                }
             }
         }
     }
 }
+
 
 android {
     namespace = "com.kineton.automotive.sdk"
