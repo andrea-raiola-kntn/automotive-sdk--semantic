@@ -15,7 +15,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.kineton.automotive"
                 artifactId = "sdk"
-                version = "0.0.1"
+                version = rootProject.file("version.txt").readText().trim()
             }
         }
 
