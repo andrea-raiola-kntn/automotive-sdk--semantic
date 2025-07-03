@@ -5,6 +5,10 @@ on:
     branches:
       - develop
 
+permissions:
+  pull-requests: write
+  issues: write
+
 jobs:
   unit-tests:
     name: Unit Tests
