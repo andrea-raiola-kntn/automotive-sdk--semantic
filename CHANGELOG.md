@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.1.3...v1.2.0) (2025-07-03)
+
+
+### Features
+
+* added test check on develop pull request ([57efd7d](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/57efd7d61263ab49db45cce4c3fa4d65281df091))
+
 ## [1.1.3](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.1.2...v1.1.3) (2025-07-03)
 
 
