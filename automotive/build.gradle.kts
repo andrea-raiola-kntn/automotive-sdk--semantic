@@ -14,6 +14,7 @@ publishing {
             groupId = "com.kineton.automotive"
             artifactId = "sdk"
             version = "0.0.1"
+            artifact("${layout.buildDirectory}/outputs/aar/sdk-release.aar")
         }
     }
 
@@ -22,8 +23,8 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/lorenzopaolo-cocchinone/automotive-sdk")
             credentials {
-                username = System.getenv("GITHUB_ACTOR")
-                password = System.getenv("GITHUB_TOKEN")
+                username = System.getenv("USERNAME_GITHUB")
+                password = System.getenv("TOKEN_GITHUB")
             }
         }
     }
