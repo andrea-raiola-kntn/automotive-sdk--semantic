@@ -16,7 +16,6 @@ afterEvaluate {
                 groupId = "com.kineton.automotive"
                 artifactId = "sdk"
                 version = "0.0.1"
-//                artifact("$buildDir/outputs/aar/automotive-release.aar")
             }
         }
 
