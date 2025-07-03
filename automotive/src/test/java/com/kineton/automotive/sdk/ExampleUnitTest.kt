@@ -25,6 +25,6 @@ class ExampleUnitTest {
     @Test
     fun helloWithName_defaultIsCorrect() {
         val sdkObj = AutomotiveSDK()
-        assertNotEquals("Hello Paul, Welcome to the AutomotiveSDK", sdkObj.helloWithName())
+        assertEquals("Hello Paul, Welcome to the AutomotiveSDK", sdkObj.helloWithName())
     }
 }
