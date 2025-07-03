@@ -14,7 +14,7 @@ publishing {
             groupId = "com.kineton.automotive"
             artifactId = "sdk"
             version = "0.0.1"
-            artifact("${layout.buildDirectory}/outputs/aar/sdk-release.aar")
+            artifact("${layout.buildDirectory}/outputs/aar/automotive-release.aar")
         }
     }
 
@@ -42,7 +42,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = true
+            isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -64,5 +64,4 @@ dependencies {
     // Android Test API
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
 }
