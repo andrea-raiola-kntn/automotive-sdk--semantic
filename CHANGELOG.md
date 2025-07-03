@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.1.1...v1.1.2) (2025-07-03)
+
+
+### Bug Fixes
+
+* publish workflow on tags ([a5bdfe4](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/a5bdfe4068be17248350124bdec138586b0e87bb))
+
 ## [1.1.1](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.1.0...v1.1.1) (2025-07-03)
 
 
