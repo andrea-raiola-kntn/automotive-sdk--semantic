@@ -24,7 +24,6 @@ Mention if you added/updated unit/integration tests.
 -->
 - [ ] Unit tests updated/added
 - [ ] Manual testing done
-- [ ] End-to-end testing (if applicable)
 
 ## 📸 Screenshots / Demo (optional)
 <!-- Add before/after screenshots or a link to a live demo if applicable -->
@@ -39,15 +38,3 @@ Fixes #
 - 
 
 ---
-
-## ✅ Pre-Merge Checklist
-- [ ] Code builds correctly
-- [ ] Linting and formatting checks passed
-- [ ] All tests passing
-- [ ] Documentation updated (if needed)
-- [ ] PR title follows [Conventional Commits](https://www.conventionalcommits.org/) (optional but recommended)
-- [ ] I have added meaningful commit messages
-
----
-
-> ℹ️ _Note: Please assign a reviewer and label this PR accordingly (e.g., `bug`, `feature`, `enhancement`)._
