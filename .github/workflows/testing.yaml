@@ -4,6 +4,12 @@ on:
   pull_request:
     branches:
       - 'develop'
+    type: [opened, reopened, synchronize]
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'version.txt'
 
 permissions:
   contents: read
