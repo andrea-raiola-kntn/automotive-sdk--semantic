@@ -1,3 +1,5 @@
+[![Run Code Quality with Detekt](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/actions/workflows/code_quality.yaml/badge.svg)](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/actions/workflows/code_quality.yaml)
+
 # automotive-sdk
 
 [![Run Unit Tests](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/actions/workflows/testing.yaml/badge.svg)](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/actions/workflows/testing.yaml)
