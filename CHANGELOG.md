@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.6.0...v1.6.1) (2025-07-04)
+
+
+### Bug Fixes
+
+* testing action ([90fa487](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/90fa487392c0e560eff51ff1547b033f1329dc28))
+
 ## [1.6.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.5.0...v1.6.0) (2025-07-04)
 
 
