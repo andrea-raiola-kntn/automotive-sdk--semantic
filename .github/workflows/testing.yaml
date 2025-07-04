@@ -8,7 +8,6 @@ on:
 permissions:
   contents: read
   pull-requests: write
-  issues: write
 
 jobs:
   unit-tests:
@@ -46,9 +45,21 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             const outcome = '${{ steps.run-tests.outcome }}';
-            const message = outcome === 'success'
-              ? '✅ All tests passed successfully!'
-              : '❌ Some tests failed. Please check the logs.';
+            
+            const runId = process.env.GITHUB_RUN_ID;
+            const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: runId
+            });
+            
+            const artifact = artifacts.data.artifacts.find(a => a.name === 'html-report');
+            const reportUrl = artifact ? artifact.archive_download_url : null;
+
+            const message = outcome === 'success' 
+              ? `✅ All tests passed successfully!\n${reportUrl ? `Report url: ${reportUrl}` : "No report artifact found."}`
+              : `❌ Some tests failed. Please check the logs.\n${reportUrl ? `Report url: ${reportUrl}` : "No report artifact found."}`;
+            
             await github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
