@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.5.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.4.0...v1.5.0) (2025-07-04)
+
+
+### Features
+
+* added detekt in testing workflow ([6cd0e4b](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/6cd0e4b4daea210b359ce22adcdbbaae8816b31b))
+* added lefthook ([3727cd8](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/3727cd8f7180db83e7508c9dd99f9df18c18951d))
+
+
+### Bug Fixes
+
+* added correct message ([78fc0e7](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/78fc0e7748490a72ceec7af8d3fb9cbd315fcf48))
+
 ## [1.4.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.3.0...v1.4.0) (2025-07-04)
 
 
