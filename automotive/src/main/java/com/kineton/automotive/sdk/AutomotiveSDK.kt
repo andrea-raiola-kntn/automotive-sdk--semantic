@@ -9,4 +9,8 @@ class AutomotiveSDK {
     fun helloWithName(name: String = "Paul"): String {
         return "Hello $name, Welcome to the AutomotiveSDK"
     }
+
+    fun forzaNapoli(): String {
+        return "Forza Napoli";
+    }
 }
