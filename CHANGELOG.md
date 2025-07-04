@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.3.0...v1.4.0) (2025-07-04)
+
+
+### Features
+
+* new method ([3ef877c](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/3ef877c9252f7312217f042c5f93263929f2fe10))
+* new method ([1aaa2ab](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/1aaa2ab50d209d94a0b39178b236abc120692e58))
+
 ## [1.3.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.2.1...v1.3.0) (2025-07-04)
 
 
