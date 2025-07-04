@@ -27,16 +27,26 @@ jobs:
       - name: Grant execute permission to gradlew
         run: chmod +x ./gradlew
 
+      - name: Run detekt
+        id: run-detekt
+        run: ./gradlew detekt
+
       - name: Run unit tests
         id: run-tests
         run: ./gradlew automotive:testReleaseUnitTest
         continue-on-error: true
 
-      - name: Upload HTML test reports
+      - name: Upload test reports
         uses: actions/upload-artifact@v4
         with:
-          name: html-report
+          name: test-report
           path: '**/build/reports/tests/testReleaseUnitTest'
+
+      - name: Upload detekt reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: detekt-report
+          path: '**/build/reports/detekt'
 
       - name: Comment on PR
         if: ${{ github.event_name == 'pull_request' }}
@@ -44,29 +54,24 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const outcome = '${{ steps.run-tests.outcome }}';
+            const outcomeTest = '${{ steps.run-tests.outcome }}';
+            const outcomeDetekt = '${{ steps.run-detekt.outcome }}';
             
-            const runId = process.env.GITHUB_RUN_ID;
-            const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              run_id: runId
-            });
+            const testMessage = outcomeTest === 'success' 
+              ? `✅ All tests passed successfully!`
+              : `❌ Some tests failed. Please check the gradle report artifact.`;
             
-            const artifact = artifacts.data.artifacts.find(a => a.name === 'html-report');
-            const reportUrl = artifact ? artifact.archive_download_url : null;
-
-            const message = outcome === 'success' 
-              ? `✅ All tests passed successfully!\n${reportUrl ? `Report url: ${reportUrl}` : "No report artifact found."}`
-              : `❌ Some tests failed. Please check the logs.\n${reportUrl ? `Report url: ${reportUrl}` : "No report artifact found."}`;
+            const detektMessage = outcomeDetekt === 'success' 
+              ? `✅ CodeQuality with detekt passed successfully!`
+              : `❌ CodeQuality checks failed. Please check the detekt report artifact.`;
             
             await github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: message
+              body: testMessage + "\n" + detektMessage
             });
 
       - name: Fail if tests failed
-        if: steps.run-tests.outcome == 'failure'
+        if: ${{ steps.run-tests.outcome == 'failure' || steps.run-detekt.outcome == 'failure' }}
         run: exit 1

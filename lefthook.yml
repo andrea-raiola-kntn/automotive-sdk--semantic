@@ -1,0 +1,9 @@
+pre-commit:
+  parallel: true
+  commands:
+    java:
+      run: java -version
+    detekt:
+      run: ./gradlew detekt
+    test:
+      run: ./gradlew testDebugUnitTest
