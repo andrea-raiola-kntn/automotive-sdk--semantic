@@ -3,7 +3,8 @@ package com.kineton.automotive.sdk
 class AutomotiveSDK {
 
     fun hello(): String {
-        return "Hello World!"
+        val hello = "Hello World!"
+        return hello
     }
 
     fun helloWithName(name: String = "Paul"): String {
@@ -11,6 +12,7 @@ class AutomotiveSDK {
     }
 
     fun forzaNapoli(): String {
-        return "Forza Napoli";
+        val forzaNapoli = "Forza Napoli"
+        return forzaNapoli
     }
 }
