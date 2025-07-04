@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.6.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.5.0...v1.6.0) (2025-07-04)
+
+
+### Features
+
+* added dependabot config for gradle ([b426155](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/b426155159e2e6ac7adaecd4b7b46432eb77d816))
+* added dependabot config for gradle ([f19be00](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/f19be00c9a44caf84b8ea2b61672feb76178c3fc))
+
 ## [1.5.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.4.0...v1.5.0) (2025-07-04)
 
 
