@@ -19,6 +19,12 @@ class ExampleUnitTest {
     @Test
     fun hello_haveExclamation() {
         val sdkObj = AutomotiveSDK()
-        assertNotEquals("Hello World!", sdkObj.hello())
+        assertNotEquals("Hello World", sdkObj.hello())
+    }
+
+    @Test
+    fun helloWithName_defaultIsCorrect() {
+        val sdkObj = AutomotiveSDK()
+        assertEquals("Hello Paul, Welcome to the AutomotiveSDK", sdkObj.helloWithName())
     }
 }
