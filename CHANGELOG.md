@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.3.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.2.1...v1.3.0) (2025-07-04)
+
+
+### Features
+
+* created workflow for release ([d4d8f76](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/d4d8f767cfa48a0cef60e2b932ca28bd0fe48ad7))
+* new hello method ([4a3be3f](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/4a3be3fbdc542767af2417ef560ea97143cc4ac9))
+* release-worflow test ([45a5d6c](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/45a5d6c8b9bf196209f71970095241479f9cc5bb))
+* release-worflow test ([4b64b3e](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/4b64b3ede854dfebf31cc3258001d9abd966f252))
+
+
+### Bug Fixes
+
+* add user to codeowner ([437ce6e](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/437ce6ec5f303e6f9c016377a5884b94cd60bfaa))
+* error action if test fails ([162c1a1](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/162c1a144a050e485fdfdc9754660a821aa5e1d5))
+* GITHUB_TOKEN permissions ([117eabd](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/117eabde3357f63f6c8532d1e83052a4a1df3753))
+* read permissions ([d16a821](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/d16a821be7d658a22fd15e55034be5f8e08ef4b2))
+* test ([2903d46](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/2903d46bb44e5b0986eeedfafad9e7059918ce22))
+* test case ([ccb6f41](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/ccb6f41a0f889b8832b259b11fd3cf6752f94992))
+
 ## [1.2.1](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.2.0...v1.2.1) (2025-07-03)
 
 
