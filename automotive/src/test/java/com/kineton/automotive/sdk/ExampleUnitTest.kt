@@ -27,4 +27,10 @@ class ExampleUnitTest {
         val sdkObj = AutomotiveSDK()
         assertEquals("Hello Paul, Welcome to the AutomotiveSDK", sdkObj.helloWithName())
     }
+
+    @Test
+    fun forzaNapoli_isCorrect() {
+        val sdkObj = AutomotiveSDK()
+        assertEquals("Forza Napoli", sdkObj.forzaNapoli())
+    }
 }
