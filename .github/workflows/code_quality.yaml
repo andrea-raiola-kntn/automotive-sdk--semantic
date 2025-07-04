@@ -1,4 +1,4 @@
-name: Run Conde Quality with Detekt
+name: Run Code Quality with Detekt
 
 on:
   pull_request:
