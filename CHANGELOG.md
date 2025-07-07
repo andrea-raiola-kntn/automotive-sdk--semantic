@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.8.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.7.1...v1.8.0) (2025-07-07)
+
+
+### Features
+
+* added pr restrictions ([622f979](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/622f979d745f732c828b40fb4f35cb37c5bb803c))
+
+
+### Bug Fixes
+
+* publish badge ([d8f344c](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/d8f344c759ea20e743514dccb5345b3b1a6e435e))
+
 ## [1.7.1](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.7.0...v1.7.1) (2025-07-07)
 
 
