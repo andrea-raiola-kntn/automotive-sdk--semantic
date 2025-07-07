@@ -1,7 +1,7 @@
 # Test Repository for Automotive-SDK
 
 ### Main
-[![Publish package to GitHub Packages](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/actions/workflows/publish.yaml/badge.svg?branch=main)](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/actions/workflows/publish.yaml?branch=main)
+[![Publish package to GitHub Packages](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/actions/workflows/publish-with-tests.yaml/badge.svg?branch=main)](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/actions/workflows/publish-with-tests.yaml?branch=main)
 
 ---
 
