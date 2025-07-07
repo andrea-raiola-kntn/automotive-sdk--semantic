@@ -4,6 +4,7 @@
 ```
 
 https://detekt.dev/docs/intro
+https://github.com/Kotlin/kotlinx-kover
 https://lefthook.dev/intro.html
 
 brew install lefthook

@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     id("maven-publish")
     id("io.gitlab.arturbosch.detekt") version "1.23.8"
+    id("org.jetbrains.kotlinx.kover") version "0.9.1"
 }
 
 kotlin {
