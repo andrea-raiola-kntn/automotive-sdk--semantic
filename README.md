@@ -1,19 +1,30 @@
 # Test Repository for Automotive-SDK
 
-### Main
-[![Publish package to GitHub Packages](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/actions/workflows/publish-with-tests.yaml/badge.svg?branch=main)](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/actions/workflows/publish-with-tests.yaml?branch=main)
+[![Build](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/actions/workflows/publish-with-tests.yaml/badge.svg?branch=main)](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/actions/workflows/publish-with-tests.yaml?branch=main)
+[![GitHub Packages](https://img.shields.io/badge/Maven-GitHub%20Packages-blueviolet?logo=github)](https://github.com/org-name/lorenzopaolo-cocchinone/automotive-sdk)
 
----
+[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](./CONTRIBUTING.md)
+[![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-Enabled-blueviolet)](./CODE_OF_CONDUCT.md)
+[![Security Policy](https://img.shields.io/badge/security-policy-blue.svg)](./SECURITY.md)
+[![Open Issues](https://img.shields.io/github/issues/lorenzopaolo-cocchinone/automotive-sdk)](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/issues)
+
+![Platform](https://img.shields.io/badge/platform-android%20automotive-brightgreen)
+
 
 ```
 https://detekt.dev/docs/intro
 https://github.com/Kotlin/kotlinx-kover
-https://lefthook.dev/intro.html
-
-brew install lefthook
-winget install evilmartians.lefthook
-
-lefthook install
 ```
 
+## Contributing
+
+Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines on how to contribute.
+
+## Code of Conduct
+
+Please read our [Code of Conduct](./CODE_OF_CONDUCT.md) to help us maintain a welcoming community.
+
+## Security
+
+To report security issues, please check [SECURITY.md](./SECURITY.md).
 
