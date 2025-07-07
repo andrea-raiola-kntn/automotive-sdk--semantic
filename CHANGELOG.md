@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.7.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.6.1...v1.7.0) (2025-07-07)
+
+
+### Features
+
+* added kover for code coverage ([1b9abfa](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/1b9abfa889632053b8f1f7a1935973bbef6ab371))
+* added kover for code coverage ([e5a246b](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/e5a246b1f12dc1f4d65effd3fe36446376f06879))
+
+
+### Bug Fixes
+
+* condition for testDebugUnitTest ([da31c6c](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/da31c6cdb40e82152dc1e7cbd6552e20870cb323))
+* split debug and release tests ([5dc28d3](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/5dc28d37c61c73ed0a2e3bc1f6be22ae6e978f20))
+
 ## [1.6.1](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.6.0...v1.6.1) (2025-07-04)
 
 
