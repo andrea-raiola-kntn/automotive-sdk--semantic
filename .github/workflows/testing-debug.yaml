@@ -4,12 +4,7 @@ on:
   pull_request:
     branches:
       - 'develop'
-    type: [opened, reopened, synchronize]
-  push:
-    branches:
-      - 'main'
-    paths:
-      - 'version.txt'
+    types: [opened, reopened, synchronize]
 
 permissions:
   contents: read
@@ -17,7 +12,7 @@ permissions:
 
 jobs:
   unit-tests:
-    name: Unit Tests
+    name: Unit Tests Debug
     runs-on: ubuntu-latest
 
     steps:
@@ -33,16 +28,16 @@ jobs:
       - name: Grant execute permission to gradlew
         run: chmod +x ./gradlew
 
-      - name: Run unit tests
+      - name: Run unit tests in debug mode
         id: run-tests
-        run: ./gradlew automotive:testReleaseUnitTest
+        run: ./gradlew automotive:testDebugUnitTest
         continue-on-error: true
 
       - name: Upload test reports
         uses: actions/upload-artifact@v4
         with:
           name: test-report
-          path: '**/build/reports/tests/testReleaseUnitTest'
+          path: '**/build/reports/tests/testDebugUnitTest'
 
       - name: Comment on PR
         if: ${{ github.event_name == 'pull_request' }}
@@ -53,8 +48,8 @@ jobs:
             const outcomeTest = '${{ steps.run-tests.outcome }}';
             
             const testMessage = outcomeTest === 'success' 
-              ? `✅ All tests passed successfully!`
-              : `❌ Some tests failed. Please check the gradle report artifact.`;
+              ? `✅ All tests in debug mode passed successfully!`
+              : `❌ Some tests in debug mode failed. Please check the gradle report artifact.`;
             
             await github.rest.issues.createComment({
               issue_number: context.issue.number,
