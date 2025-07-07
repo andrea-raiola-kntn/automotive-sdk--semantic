@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.7.1](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.7.0...v1.7.1) (2025-07-07)
+
+
+### Bug Fixes
+
+* added test for fixBackEnd ([347203b](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/347203bf7e5f5b8a6169f93d116b784cb9db28a3))
+* testing badges in README.md ([10799a6](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/10799a61d454bc4f937e06ec0914da8d8517c5b0))
+
 ## [1.7.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.6.1...v1.7.0) (2025-07-07)
 
 
