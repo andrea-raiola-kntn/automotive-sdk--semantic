@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.9.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.8.0...v1.9.0) (2025-07-07)
+
+
+### Features
+
+* add CONTRIBUTING.md ([efeb55e](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/efeb55e9070fb204a4ba00392452955a62302d26))
+* last template(s) ([aa3d102](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/aa3d102a2f14720ce6a6fd57bfcab36dd707a98f))
+
+
+### Bug Fixes
+
+* pull_request on develop now start if edited ([6dcf1ec](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/6dcf1ecb4f052b151f9e0445012978143a4c7579))
+* wrong template files ([dd96280](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/dd962806b428b73050cbd37098c11fcdec658a3f))
+
 ## [1.8.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.7.1...v1.8.0) (2025-07-07)
 
 
