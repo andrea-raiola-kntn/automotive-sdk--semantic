@@ -1,0 +1,64 @@
+name: Validate PR source branches
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  restrict-prs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate source branch name
+        id: validate
+        run: |
+          echo "BASE=${{ github.base_ref }}" >> $GITHUB_ENV
+          echo "HEAD=${{ github.head_ref }}" >> $GITHUB_ENV
+
+          VALID=false
+
+          if [[ "${{ github.base_ref }}" == "main" ]]; then
+            # Allow only from develop or hotfix/*
+            if [[ "${{ github.head_ref }}" == "develop" || "${{ github.head_ref }}" == hotfix/* ]]; then
+              VALID=true
+            fi
+          elif [[ "${{ github.base_ref }}" == "develop" ]]; then
+            # Allow only from feature/*, bugfix/*, or hotfix/*
+            if [[ "${{ github.head_ref }}" == feature/* || "${{ github.head_ref }}" == bugfix/* || "${{ github.head_ref }}" == hotfix/* ]]; then
+              VALID=true
+            fi
+          fi
+
+          echo "VALID=$VALID" >> $GITHUB_ENV
+
+      - name: Comment on invalid PR
+        if: env.VALID == 'false'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const base = process.env.BASE;
+            const head = process.env.HEAD;
+            let message = "";
+
+            if (base === "main") {
+              message = `🚫 PRs into \`main\` are only allowed from \`develop\` or \`hotfix/*\`. This PR is from \`${head}\`.`;
+            } else if (base === "develop") {
+              message = `🚫 PRs into \`develop\` are only allowed from \`feature/*\`, \`bugfix/*\`, or \`hotfix/*\`. This PR is from \`${head}\`.`;
+            } else {
+              message = `🚫 This PR does not follow the branch naming rules.`;
+            }
+
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: message
+            });
+
+      - name: Fail job on invalid branch
+        if: env.VALID == 'false'
+        run: |
+          echo "Invalid source branch for target '${{ github.base_ref }}'"
+          exit 1
