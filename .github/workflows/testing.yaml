@@ -38,7 +38,7 @@ jobs:
         run: ./gradlew automotive:testReleaseUnitTest
 
       - name: Run Debug Unit Test on develop
-        if: github.ref_name == 'develop'
+        if: github.ref_name != 'main'
         run: ./gradlew automotive:testDebugUnitTest
 
       - name: Upload test reports
