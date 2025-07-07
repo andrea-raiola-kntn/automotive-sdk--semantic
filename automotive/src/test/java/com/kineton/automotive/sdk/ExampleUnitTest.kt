@@ -33,4 +33,10 @@ class ExampleUnitTest {
         val sdkObj = AutomotiveSDK()
         assertEquals("Forza Napoli", sdkObj.forzaNapoli())
     }
+
+    @Test
+    fun fixBackEnd_isCorrect() {
+        val sdkObj = AutomotiveSDK()
+        assertEquals("Fix Back End", sdkObj.fixBackEnd())
+    }
 }
