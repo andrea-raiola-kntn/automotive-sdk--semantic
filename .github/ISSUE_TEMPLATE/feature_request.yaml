@@ -1,0 +1,91 @@
+name: Feature Request
+description: Suggest a new feature or enhancement for the Automotive OS SDK
+title: "[FEATURE] Short and clear feature title"
+labels: [enhancement]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Is your feature request related to a problem?
+        A clear and concise description of the problem or limitation you’re facing.
+        > Example: “We need to support a new sensor type not currently handled by the SDK.”
+
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: Problem description
+      description: What problem or limitation are you trying to solve?
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Describe the solution you'd like
+        Describe the feature or behavior you'd like to see implemented.
+        > Example: “Add an API to handle ultrasonic parking sensors with real-time update callbacks.”
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed solution
+      description: What’s the ideal feature you'd like to see?
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Describe alternatives you've considered
+        Have you tried any workarounds or other approaches?
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Describe any workaround or alternative you’ve tried.
+      placeholder: >
+        Example: “We tried mapping the new data to existing generic sensor APIs, but the format is incompatible.”
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Target use case or scenario
+        Explain how this feature would be used in a real automotive context.
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use case
+      description: How would this feature be used in practice?
+      placeholder: >
+        Example: “Used in low-speed maneuvering for autonomous parking assistance.”
+
+  - type: checkboxes
+    id: components
+    attributes:
+      label: Affected components
+      description: Select any areas of the SDK that would be affected.
+      options:
+        - label: Radioplayer API
+        - label: Cache Management
+        - label: SDK Configuration
+        - label: Vehicle
+        - label: Diagnostics
+        - label: Logging / Telemetry
+        - label: Other (please specify below)
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Add any other relevant information, mockups, diagrams, or logs.
+
+  - type: input
+    id: jira
+    attributes:
+      label: Jira (if applicable)
+      description: Paste the link to the corresponding Jira ticket
+      placeholder: https://jira.yourcompany.com/browse/SDK-456

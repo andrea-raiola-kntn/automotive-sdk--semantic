@@ -1,9 +1,9 @@
 # Test Repository for Automotive-SDK
 
 [![Build](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/actions/workflows/publish-with-tests.yaml/badge.svg?branch=main)](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/actions/workflows/publish-with-tests.yaml?branch=main)
-[![GitHub Packages](https://img.shields.io/badge/Maven-GitHub%20Packages-blueviolet?logo=github)](https://github.com/org-name/lorenzopaolo-cocchinone/automotive-sdk)
+[![GitHub Packages](https://img.shields.io/badge/Maven-GitHub%20Packages-blueviolet?logo=github)](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/packages)
 
-[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](./CONTRIBUTING.md)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 [![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-Enabled-blueviolet)](./CODE_OF_CONDUCT.md)
 [![Security Policy](https://img.shields.io/badge/security-policy-blue.svg)](./SECURITY.md)
 [![Open Issues](https://img.shields.io/github/issues/lorenzopaolo-cocchinone/automotive-sdk)](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/issues)
