@@ -4,7 +4,7 @@ on:
   pull_request:
     branches:
       - 'develop'
-    type: [opened, reopened, synchronize]
+    types: [opened, reopened, synchronize]
   push:
     branches:
       - 'main'
@@ -33,10 +33,13 @@ jobs:
       - name: Grant execute permission to gradlew
         run: chmod +x ./gradlew
 
-      - name: Run unit tests
-        id: run-tests
+      - name: Run Release Unit Test on main
+        if: github.ref_name == 'main'
         run: ./gradlew automotive:testReleaseUnitTest
-        continue-on-error: true
+
+      - name: Run Debug Unit Test on develop
+        if: github.ref_name == 'develop'
+        run: ./gradlew automotive:testDebugUnitTest
 
       - name: Upload test reports
         uses: actions/upload-artifact@v4
