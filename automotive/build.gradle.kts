@@ -1,7 +1,10 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+
     id("maven-publish")
+    id("com.google.devtools.ksp")
+
     id("io.gitlab.arturbosch.detekt") version "1.23.8"
     id("org.jetbrains.kotlinx.kover") version "0.9.1"
 }
@@ -71,9 +74,17 @@ android {
 dependencies {
     // Core API to access Android API
     implementation(libs.androidx.core.ktx)
+
+    // Dagger for Dependency injection
+    implementation(libs.dagger)
+
     // Test API
     testImplementation(libs.junit)
+
     // Android Test API
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // Annotation Processors
+    ksp(libs.dagger.compiler)
 }

@@ -12,8 +12,19 @@
 
 
 ```
+// Code Quality maintened by community
 https://detekt.dev/docs/intro
+
+// Code covergae for Kotlin mantained by JetBrains
 https://github.com/Kotlin/kotlinx-kover
+
+// DI with  Google Dagger
+https://github.com/google/dagger
+https://developer.android.com/training/dependency-injection/dagger-android
+
+// Annotation Processing
+https://github.com/google/ksp
+https://github.com/google/dagger/issues/2349
 ```
 
 ## Contributing
