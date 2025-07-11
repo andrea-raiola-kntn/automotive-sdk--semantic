@@ -1,11 +1,16 @@
 package com.kineton.automotive.sdk
 
-import com.kineton.automotive.sdk.interfaces.Repository
+import com.kineton.automotive.sdk.entities.User
+import com.kineton.automotive.sdk.repository.UserRepository
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import java.util.UUID
 
-class AutomotiveSDK {
+class AutomotiveSDK(private val dispatcher: CoroutineDispatcher = Dispatchers.IO) {
 
-    private val repository: Repository by lazy {
-        DaggerAutomotiveSDKComponent.create().getRepository()
+    private val userRepository: UserRepository by lazy {
+        DaggerAutomotiveSDKComponent.create().getUserRepository()
     }
 
     fun hello(): String {
@@ -13,7 +18,7 @@ class AutomotiveSDK {
         return hello
     }
 
-    fun helloWithName(name: String = "Paul"): String {
+    fun helloWithName(name: String? = "Paul"): String {
         return "Hello $name, Welcome to the AutomotiveSDK"
     }
 
@@ -27,7 +32,16 @@ class AutomotiveSDK {
         return fixBackEnd
     }
 
-    fun testDagger(): String {
-            return this.repository.getData()
+    suspend fun testDagger(): String = withContext(dispatcher) {
+        userRepository.addUser(
+            User(
+                uid = UUID.randomUUID().toString(),
+                firstName = "Francesco",
+                lastName = "Virgolini"
+            )
+        )
+
+        val user = userRepository.getUserByName("Francesco", "Virgolini")
+        helloWithName("${user?.firstName} ${user?.lastName}")
     }
 }

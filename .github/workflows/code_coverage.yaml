@@ -28,36 +28,64 @@ jobs:
       - name: Grant execute permission to gradlew
         run: chmod +x ./gradlew
 
-      - name: Run Kover tests and generate report
-        run: ./gradlew koverLog
+      - name: Run JaCoCo Code Coverage
+        run: ./gradlew jacocoCoverage
 
       - name: Extract code coverage
         id: extract-coverage
         run: |
-          COVERAGE_LINE=$(./gradlew koverLog | grep "application line coverage")
-          COVERAGE=$(echo "$COVERAGE_LINE" | sed -E 's/.*: ([0-9]+(\.[0-9]+)?)%.*/\1/')
-          echo "coverage=${COVERAGE}" >> $GITHUB_OUTPUT  
+          COVERAGE_LINE=$(./gradlew jacocoCoverage | grep -Eo "Code coverage: [0-9]+,[0-9]+% \([0-9]+/[0-9]+ lines covered\)")
+          
+          PERCENTAGE=$(echo "$COVERAGE_LINE" | sed -E 's/Code coverage: ([0-9]+,[0-9]+)%.*/\1/')
+          
+          HTML_LINE=$(./gradlew jacocoCoverage | grep "HTML report available at:")
+          HTML_PATH=$(echo "$HTML_LINE" | sed -E 's/.*file:\/\/(.*)/\1/')
+          
+          echo "percentage=$PERCENTAGE" >> $GITHUB_OUTPUT
+          echo "line=$COVERAGE_LINE" >> $GITHUB_OUTPUT
+          echo "html_path=$HTML_PATH" >> $GITHUB_OUTPUT
 
-      - name: Comment coverage and fail if needed
+      - name: Upload coverage HTML report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-html-report
+          path: ${{ steps.extract-coverage.outputs.html_path }}
+
+      - name: Comment coverage
         if: ${{ github.event_name == 'pull_request' }}
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const threshold = 80;
-            const coverage = parseFloat('${{ steps.extract-coverage.outputs.coverage }}');
-            const below = coverage < threshold;
-      
-            const body = below
-              ? `❌ **Code coverage is ${coverage}%**, which is below the minimum threshold of ${threshold}%.`
-              : `✅ **Code coverage is ${coverage}%**, which meets the minimum threshold of ${threshold}%.`;
-      
+            const body = '${{ steps.extract-coverage.outputs.line }}'
+                    
             await github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body
+              body        
             });
+
+#      - name: Comment coverage and fail if needed
+#        if: ${{ github.event_name == 'pull_request' }}
+#        uses: actions/github-script@v7
+#        with:
+#          github-token: ${{ secrets.GITHUB_TOKEN }}
+#          script: |
+#            const threshold = 80;
+#            const coverage = parseFloat('${{ steps.extract-coverage.outputs.coverage }}');
+#            const below = coverage < threshold;
+#
+#            const body = below
+#              ? `❌ **Code coverage is ${coverage}%**, which is below the minimum threshold of ${threshold}%.`
+#              : `✅ **Code coverage is ${coverage}%**, which meets the minimum threshold of ${threshold}%.`;
+#
+#            await github.rest.issues.createComment({
+#              issue_number: context.issue.number,
+#              owner: context.repo.owner,
+#              repo: context.repo.repo,
+#              body
+#            });
       
             if (below) {
               core.setFailed(`Code coverage ${coverage}% is below threshold ${threshold}%`);

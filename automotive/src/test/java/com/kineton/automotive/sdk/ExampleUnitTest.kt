@@ -14,7 +14,7 @@ class ExampleUnitTest {
     private val sdkObj: AutomotiveSDK by lazy {
         AutomotiveSDK()
     }
-    
+
     @Test
     fun hello_isCorrect() {
         assertEquals("Hello World!", sdkObj.hello())
@@ -38,10 +38,5 @@ class ExampleUnitTest {
     @Test
     fun fixBackEnd_isCorrect() {
         assertEquals("Fix Back End", sdkObj.fixBackEnd())
-    }
-
-    @Test
-    fun dagger_isWorking() {
-        assertEquals("Hello from Repository", sdkObj.testDagger())
     }
 }

@@ -1,7 +1,9 @@
 package com.kineton.automotive.sdk
 
-import com.kineton.automotive.sdk.interfaces.Repository
-import com.kineton.automotive.sdk.interfaces.RepositoryImpl
+import com.kineton.automotive.sdk.daos.RoomUserDao
+import com.kineton.automotive.sdk.managers.RoomManager
+import com.kineton.automotive.sdk.repository.RoomUserRepository
+import com.kineton.automotive.sdk.repository.UserRepository
 import dagger.Module
 import dagger.Provides
 
@@ -9,5 +11,13 @@ import dagger.Provides
 @Module
 internal class AutomotiveSDKModule {
     @Provides
-    fun provideRepository(): Repository = RepositoryImpl()
+    fun provideRoomUserDao(): RoomUserDao {
+        return RoomManager.roomDb.getUserDao()
+    }
+
+    @Provides
+    fun provideUserRepository(dao: RoomUserDao): UserRepository {
+        return RoomUserRepository(dao)
+    }
+
 }
