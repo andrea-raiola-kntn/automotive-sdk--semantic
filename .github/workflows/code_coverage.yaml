@@ -28,28 +28,20 @@ jobs:
       - name: Grant execute permission to gradlew
         run: chmod +x ./gradlew
 
-      - name: Run JaCoCo Code Coverage
-        run: ./gradlew jacocoCoverage
-
-      - name: Extract code coverage
+      - name: Run JaCoCo Code Coverage and Extract code coverage
         id: extract-coverage
         run: |
-          COVERAGE_LINE=$(./gradlew jacocoCoverage | grep -Eo "Code coverage: [0-9]+,[0-9]+% \([0-9]+/[0-9]+ lines covered\)")
-          
+          COVERAGE_LINE=$(./gradlew clean jacocoCoverage | grep -Eo "✔ Code coverage: [0-9]+,[0-9]+% \([0-9]+/[0-9]+ lines covered\)")
           PERCENTAGE=$(echo "$COVERAGE_LINE" | sed -E 's/Code coverage: ([0-9]+,[0-9]+)%.*/\1/')
-          
-          HTML_LINE=$(./gradlew jacocoCoverage | grep "HTML report available at:")
-          HTML_PATH=$(echo "$HTML_LINE" | sed -E 's/.*file:\/\/(.*)/\1/')
           
           echo "percentage=$PERCENTAGE" >> $GITHUB_OUTPUT
           echo "line=$COVERAGE_LINE" >> $GITHUB_OUTPUT
-          echo "html_path=$HTML_PATH" >> $GITHUB_OUTPUT
 
       - name: Upload coverage HTML report
         uses: actions/upload-artifact@v4
         with:
           name: coverage-html-report
-          path: ${{ steps.extract-coverage.outputs.html_path }}
+          path: '**/build/reports/jacoco/jacocoCoverage/html'
 
       - name: Comment coverage
         if: ${{ github.event_name == 'pull_request' }}
