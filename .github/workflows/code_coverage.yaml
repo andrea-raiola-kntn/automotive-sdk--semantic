@@ -57,13 +57,13 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const body = '${{ steps.extract-coverage.outputs.line }}'
-                    
+            const body = `${{ steps.extract-coverage.outputs.line }}`;
+            
             await github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body        
+              body
             });
 
 #      - name: Comment coverage and fail if needed
@@ -86,7 +86,7 @@ jobs:
 #              repo: context.repo.repo,
 #              body
 #            });
-      
-            if (below) {
-              core.setFailed(`Code coverage ${coverage}% is below threshold ${threshold}%`);
-            }
+
+#            if (below) {
+#              core.setFailed(`Code coverage ${coverage}% is below threshold ${threshold}%`);
+#            }
