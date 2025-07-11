@@ -10,33 +10,33 @@ import org.junit.Test
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 class ExampleUnitTest {
+
+    private val sdkObj: AutomotiveSDK by lazy {
+        AutomotiveSDK()
+    }
+
     @Test
     fun hello_isCorrect() {
-        val sdkObj = AutomotiveSDK()
         assertEquals("Hello World!", sdkObj.hello())
     }
 
     @Test
     fun hello_haveExclamation() {
-        val sdkObj = AutomotiveSDK()
         assertNotEquals("Hello World", sdkObj.hello())
     }
 
     @Test
     fun helloWithName_defaultIsCorrect() {
-        val sdkObj = AutomotiveSDK()
         assertEquals("Hello Paul, Welcome to the AutomotiveSDK", sdkObj.helloWithName())
     }
 
     @Test
     fun forzaNapoli_isCorrect() {
-        val sdkObj = AutomotiveSDK()
         assertEquals("Forza Napoli", sdkObj.forzaNapoli())
     }
 
     @Test
     fun fixBackEnd_isCorrect() {
-        val sdkObj = AutomotiveSDK()
         assertEquals("Fix Back End", sdkObj.fixBackEnd())
     }
 }
