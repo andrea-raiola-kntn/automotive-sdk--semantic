@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.10.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.9.0...v1.10.0) (2025-07-11)
+
+
+### Features
+
+* add dagger2 with KSP2 ([43fd55b](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/43fd55b2166ba22ef63664646b6ac77ef646361a))
+* Room, Dagger 2, MMKV, APP Startup ([c271659](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/c2716591b814c99965487f545fa77a217f0f5fe2))
+
+
+### Bug Fixes
+
+* code coverage action ([63d03dc](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/63d03dcd73a8273023e2990422da837856c05e76))
+* code coverage action 2 ([3df295b](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/3df295ba1f5cb357f4841ba021d73159b725318b))
+* detekt issues ([af3b863](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/af3b863fb35582a74f8763046b2ba9ef0ddf2f55))
+* yaml formatting ([e5fe766](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/e5fe76691465b208546434a5498e29252731f3a9))
+
 ## [1.9.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.8.0...v1.9.0) (2025-07-07)
 
 
