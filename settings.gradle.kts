@@ -21,4 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "automotive-sdk"
 include(":automotive")
- 
