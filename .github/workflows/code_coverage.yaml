@@ -31,8 +31,8 @@ jobs:
       - name: Run JaCoCo Code Coverage and Extract code coverage
         id: extract-coverage
         run: |
-          COVERAGE_LINE=$(./gradlew clean jacocoCoverage | grep -Eo "✔ Code coverage: [0-9]+,[0-9]+% \([0-9]+/[0-9]+ lines covered\)")
-          PERCENTAGE=$(echo "$COVERAGE_LINE" | sed -E 's/Code coverage: ([0-9]+,[0-9]+)%.*/\1/')
+          COVERAGE_LINE=$(./gradlew clean jacocoCoverage 2>&1 | grep "Code coverage:")
+          PERCENTAGE=$(echo "$COVERAGE_LINE" | sed -E 's/✔ Code coverage: ([0-9]+,[0-9]+)%.*/\1/')
           
           echo "percentage=$PERCENTAGE" >> $GITHUB_OUTPUT
           echo "line=$COVERAGE_LINE" >> $GITHUB_OUTPUT
