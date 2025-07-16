@@ -1,12 +1,15 @@
 version: 2
 updates:
   - package-ecosystem: "gradle"
-    directory: "/automotive/"
+    directory: "/"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 10  
     commit-message:
       prefix: "deps"
       include: "scope"
+    ignore:
+      - dependency-name: "com.android.tools.build:gradle"
+        versions: ["8.x"]
     labels:
-      - "dependencies"
+      - "dependencies"    
