@@ -8,6 +8,7 @@ object RoomManager {
     lateinit var roomDb: AutomotiveSDKDatabase
         private set
 
+    @JvmOverloads
     fun init(context: Context, isInMemory: Boolean = false) {
         val builder = if (isInMemory) {
             Room.inMemoryDatabaseBuilder(context, AutomotiveSDKDatabase::class.java)

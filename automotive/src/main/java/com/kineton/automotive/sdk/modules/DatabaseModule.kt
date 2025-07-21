@@ -1,4 +1,4 @@
-package com.kineton.automotive.sdk
+package com.kineton.automotive.sdk.modules
 
 import com.kineton.automotive.sdk.daos.RoomUserDao
 import com.kineton.automotive.sdk.managers.RoomManager
@@ -9,7 +9,7 @@ import dagger.Provides
 
 // Dagger
 @Module
-internal class AutomotiveSDKModule {
+internal class DatabaseModule {
     @Provides
     fun provideRoomUserDao(): RoomUserDao {
         return RoomManager.roomDb.getUserDao()
