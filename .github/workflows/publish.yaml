@@ -7,6 +7,8 @@ on:
     paths:
       - 'version.txt'
 
+  workflow_dispatch:
+
 jobs:
   publish-aar:
     runs-on: ubuntu-latest
@@ -30,5 +32,5 @@ jobs:
       - name: Publish package
         run: ./gradlew publish
         env:
-          USERNAME_GITHUB: ${{ secrets.GITHUB_ACTOR }}
+          USERNAME_GITHUB: ${{ github.actor }}
           TOKEN_GITHUB: ${{ secrets.GITHUB_TOKEN }}
