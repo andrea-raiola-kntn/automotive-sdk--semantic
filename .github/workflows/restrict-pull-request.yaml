@@ -25,7 +25,7 @@ jobs:
             fi
           elif [[ "${{ github.base_ref }}" == "develop" ]]; then
             # Allow only from feature/*, bugfix/*, or hotfix/*
-            if [[ "${{ github.head_ref }}" == feature/* || "${{ github.head_ref }}" == bugfix/* || "${{ github.head_ref }}" == hotfix/* ]]; then
+            if [[ "${{ github.head_ref }}" == feature/* || "${{ github.head_ref }}" == bugfix/* || "${{ github.head_ref }}" == hotfix/* || "${{ github.head_ref }}" == dependabot/gradle/* ]]; then
               VALID=true
             fi
           fi
