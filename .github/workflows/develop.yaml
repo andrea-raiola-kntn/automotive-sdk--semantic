@@ -56,6 +56,9 @@ jobs:
 
       # Run JaCoCo
       - name: Run JaCoCo and Extract %
+        env:
+          RADIOPLAYER_USERNAME: ${{ secrets.RADIOPLAYER_USERNAME }}
+          RADIOPLAYER_PASSWORD: ${{ secrets.RADIOPLAYER_PASSWORD }}
         id: extract-coverage
         run: |
           COVERAGE_LINE=$(./gradlew clean jacocoCoverage 2>&1 | grep "Code coverage:")
