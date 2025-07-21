@@ -1,5 +1,69 @@
 # Changelog
 
+## [1.10.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.9.0...v1.10.0) (2025-07-11)
+
+
+### Features
+
+* add dagger2 with KSP2 ([43fd55b](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/43fd55b2166ba22ef63664646b6ac77ef646361a))
+* Room, Dagger 2, MMKV, APP Startup ([c271659](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/c2716591b814c99965487f545fa77a217f0f5fe2))
+
+
+### Bug Fixes
+
+* code coverage action ([63d03dc](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/63d03dcd73a8273023e2990422da837856c05e76))
+* code coverage action 2 ([3df295b](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/3df295ba1f5cb357f4841ba021d73159b725318b))
+* detekt issues ([af3b863](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/af3b863fb35582a74f8763046b2ba9ef0ddf2f55))
+* yaml formatting ([e5fe766](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/e5fe76691465b208546434a5498e29252731f3a9))
+
+## [1.9.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.8.0...v1.9.0) (2025-07-07)
+
+
+### Features
+
+* add CONTRIBUTING.md ([efeb55e](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/efeb55e9070fb204a4ba00392452955a62302d26))
+* last template(s) ([aa3d102](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/aa3d102a2f14720ce6a6fd57bfcab36dd707a98f))
+
+
+### Bug Fixes
+
+* pull_request on develop now start if edited ([6dcf1ec](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/6dcf1ecb4f052b151f9e0445012978143a4c7579))
+* wrong template files ([dd96280](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/dd962806b428b73050cbd37098c11fcdec658a3f))
+
+## [1.8.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.7.1...v1.8.0) (2025-07-07)
+
+
+### Features
+
+* added pr restrictions ([622f979](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/622f979d745f732c828b40fb4f35cb37c5bb803c))
+
+
+### Bug Fixes
+
+* publish badge ([d8f344c](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/d8f344c759ea20e743514dccb5345b3b1a6e435e))
+
+## [1.7.1](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.7.0...v1.7.1) (2025-07-07)
+
+
+### Bug Fixes
+
+* added test for fixBackEnd ([347203b](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/347203bf7e5f5b8a6169f93d116b784cb9db28a3))
+* testing badges in README.md ([10799a6](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/10799a61d454bc4f937e06ec0914da8d8517c5b0))
+
+## [1.7.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.6.1...v1.7.0) (2025-07-07)
+
+
+### Features
+
+* added kover for code coverage ([1b9abfa](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/1b9abfa889632053b8f1f7a1935973bbef6ab371))
+* added kover for code coverage ([e5a246b](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/e5a246b1f12dc1f4d65effd3fe36446376f06879))
+
+
+### Bug Fixes
+
+* condition for testDebugUnitTest ([da31c6c](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/da31c6cdb40e82152dc1e7cbd6552e20870cb323))
+* split debug and release tests ([5dc28d3](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/5dc28d37c61c73ed0a2e3bc1f6be22ae6e978f20))
+
 ## [1.6.1](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.6.0...v1.6.1) (2025-07-04)
 
 
