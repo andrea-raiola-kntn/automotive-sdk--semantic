@@ -8,7 +8,8 @@ class RoomInitializer : Initializer<Unit> {
     override fun create(context: Context) {
         RoomManager.init(
             context = context,
-            isInMemory = context.packageName.contains(".test"))
+            isInMemory = false
+        )
     }
 
     override fun dependencies(): List<Class<out Initializer<*>>> = emptyList()

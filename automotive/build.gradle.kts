@@ -20,9 +20,9 @@ jacoco {
 
 publishing {
     publications {
-        create<MavenPublication>("release") {
+        create<MavenPublication>("coreRelease") {
             afterEvaluate {
-                from(components["release"])
+                from(components["coreRelease"])
             }
             groupId = "com.kineton.automotive"
             artifactId = "sdk"
@@ -44,16 +44,17 @@ publishing {
 
 android {
     namespace = "com.kineton.automotive.sdk"
+    flavorDimensions += "oem"
     compileSdk = 36
 
     defaultConfig {
-        minSdk = 29
+        minSdk = 28
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
 
     publishing {
-        singleVariant("release") {
+        singleVariant("coreRelease") {
             withSourcesJar()
             withJavadocJar()
         }
@@ -67,13 +68,26 @@ android {
                 "proguard-rules.pro"
             )
         }
+
         debug {
             enableAndroidTestCoverage = true
         }
     }
 
+    productFlavors {
+        create("core") {
+            dimension = "oem"
+        }
+    }
+
     ksp {
         arg("room.schemaLocation", "$projectDir/schemas")
+    }
+
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+        }
     }
 }
 
@@ -81,7 +95,6 @@ val jacocoExclusions = listOf(
     "**/R.class", "**/R$*.class", "**/BuildConfig.*", "**/Manifest*.*",
     "**/AutomotiveSDKDatabase.*", "**/AutomotiveSDKDatabase_Impl**.*",
     "**/com/kineton/automotive/sdk/initializers/**",
-    "**/com/kineton/automotive/sdk/managers/**",
     "**/com/kineton/automotive/sdk/daos/**"
 )
 
@@ -93,7 +106,7 @@ tasks.withType<Test> {
 }
 
 tasks.register<JacocoReport>("jacocoCoverage") {
-    dependsOn("testDebugUnitTest")
+    dependsOn("testCoreDebugUnitTest")
     group = "Reporting"
     description = "Execute Unit Test and Instrumentation Test, generate and combine Jacoco coverage report"
 
@@ -104,7 +117,7 @@ tasks.register<JacocoReport>("jacocoCoverage") {
 
     sourceDirectories.setFrom(layout.projectDirectory.dir("src/main/java"))
     classDirectories.setFrom(
-        files(fileTree(layout.buildDirectory.dir("tmp/kotlin-classes/debug")) {
+        files(fileTree(layout.buildDirectory.dir("tmp/kotlin-classes/coreDebug")) {
             exclude(jacocoExclusions)
         })
     )
@@ -158,9 +171,13 @@ dependencies {
     implementation(libs.dagger)
     ksp(libs.dagger.compiler)
 
+    // Ok Http3
+    implementation(libs.okhttp)
+
     // Test
     testImplementation(libs.junit)
     testImplementation(libs.mockito.core)
+    testImplementation(libs.robolectric)
 
     // Android Test
     androidTestImplementation(libs.androidx.junit)

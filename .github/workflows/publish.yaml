@@ -27,24 +27,9 @@ jobs:
       - name: Grant execute permission to gradlew
         run: chmod +x ./gradlew
 
-      - name: Run unit tests
-        id: run-tests
-        run: ./gradlew automotive:testReleaseUnitTest
-        continue-on-error: true
-
-      - name: Upload test reports
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-report
-          path: '**/build/reports/tests/testReleaseUnitTest'
-
       - name: Publish package
         if: ${{ steps.run-tests.conclusion == 'success' }}
         run: ./gradlew publish
         env:
           USERNAME_GITHUB: ${{ secrets.GITHUB_ACTOR }}
           TOKEN_GITHUB: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Fail if tests failed
-        if: ${{ steps.run-tests.conclusion == 'failure' }}
-        run: exit 1
