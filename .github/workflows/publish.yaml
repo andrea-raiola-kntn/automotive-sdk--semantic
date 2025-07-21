@@ -28,7 +28,6 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Publish package
-        if: ${{ steps.run-tests.conclusion == 'success' }}
         run: ./gradlew publish
         env:
           USERNAME_GITHUB: ${{ secrets.GITHUB_ACTOR }}
