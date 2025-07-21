@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.11.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.10.0...v1.11.0) (2025-07-21)
+
+
+### Features
+
+* okHttp && build variant ([cdc72ba](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/cdc72ba996d13ddbf54b3beaed6fd5a1c3cc83a9))
+
+
+### Bug Fixes
+
+* allow dependabot branches ([041f4ea](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/041f4ea86368e94d5d50a691798fdb3f38687eef))
+* dependabot branch target ([a6113ac](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/a6113ac90c493670e3410b9b6d846d16c767d67c))
+* env variable for jacoco task ([595109d](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/595109d3141390fb1c2ed3a75a370149c97b550b))
+
 ## [1.10.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.9.0...v1.10.0) (2025-07-11)
 
 
