@@ -18,6 +18,10 @@ jacoco {
     toolVersion = "0.8.13"
 }
 
+detekt {
+    config.setFrom("detekt.yml")
+}
+
 publishing {
     publications {
         create<MavenPublication>("coreRelease") {
@@ -27,6 +31,15 @@ publishing {
             groupId = "com.kineton.automotive"
             artifactId = "sdk"
             version = rootProject.file("version.txt").readText().trim()
+        }
+
+        create<MavenPublication>("coreDebug") {
+            afterEvaluate {
+                from(components["coreDebug"])
+            }
+            groupId = "com.kineton.automotive"
+            artifactId = "sdk"
+            version = rootProject.file("version.txt").readText().trim() + "-debug"
         }
     }
 
@@ -58,6 +71,15 @@ android {
             withSourcesJar()
             withJavadocJar()
         }
+
+        singleVariant("coreDebug") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 
     buildTypes {
@@ -67,10 +89,12 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("Boolean", "NETWORK_LOGGING", "false")
         }
 
         debug {
             enableAndroidTestCoverage = true
+            buildConfigField("Boolean", "NETWORK_LOGGING", "true")
         }
     }
 
@@ -174,12 +198,12 @@ dependencies {
     // Okhttp3
     implementation(libs.okhttp)
 
-    // Retrofit
-    implementation("com.squareup.retrofit2:retrofit:3.0.0")
-    implementation("com.squareup.retrofit2:converter-jackson:3.0.0")
-
     // Jackson
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.19.2")
+    implementation(libs.jackson.module.kotlin)
+
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.jackson)
 
     // Test
     testImplementation(libs.junit)

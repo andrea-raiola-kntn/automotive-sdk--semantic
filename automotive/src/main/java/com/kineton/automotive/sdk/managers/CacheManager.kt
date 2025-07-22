@@ -4,11 +4,11 @@ import android.content.Context
 
 import java.io.File
 
-class CacheManager {
+object CacheManager {
     lateinit var httpCacheFile: File
         private set
 
-    internal fun init(context: Context) {
+    fun init(context: Context) {
         httpCacheFile = File(context.cacheDir, "http_cache")
     }
 }

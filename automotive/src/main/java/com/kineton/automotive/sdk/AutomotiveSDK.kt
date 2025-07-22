@@ -16,7 +16,7 @@ class AutomotiveSDK {
             baseUrl = baseUrl,
             username = username,
             password = password,
-            cacheDirectory = CacheManager().httpCacheFile
+            cacheDirectory = CacheManager.httpCacheFile
         )
 
         val networkModule = NetworkModule(NetworkManager.retrofitClient)

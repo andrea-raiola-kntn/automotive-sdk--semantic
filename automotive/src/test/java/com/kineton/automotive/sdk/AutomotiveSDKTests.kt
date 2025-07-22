@@ -20,14 +20,15 @@ import org.robolectric.annotation.Config
 import java.io.File
 
 @RunWith(RobolectricTestRunner::class)
-// TODO we need to replace the Base Manifest
-@Config(minSdk = 28)
+@Config(minSdk = 28, manifest = Config.NONE)
 class AutomotiveSDKTests {
 
-
     @Before
-    fun appStartup() {
+    fun `manual run of initializers`() {
         val context = RuntimeEnvironment.getApplication()
+        check(context.packageName.contains(".test")) {
+            "This test must run in a test environment"
+        }
 
         AppInitializer.getInstance(context)
             .initializeComponent(RoomInitializer::class.java)
@@ -35,28 +36,23 @@ class AutomotiveSDKTests {
         AppInitializer.getInstance(context)
             .initializeComponent(CacheInitializer::class.java)
 
-        AppInitializer.getInstance(context)
-            .initializeComponent(MMKVInitializer::class.java)
+// TODO need to mock this
+//        AppInitializer.getInstance(context)
+//            .initializeComponent(MMKVInitializer::class.java)
     }
 
 
     @Test
-    fun `init should work and create the modules for dagger`() = runBlocking {
-        NetworkManager.init(
+    fun `init should work and create the modules for dagger`() {
+        val sdkObj = AutomotiveSDK()
+        sdkObj.init(
             baseUrl = "https://core-search.radioplayer.cloud",
             username = "Mock_Username",
             password = "Mock_Password",
-            cacheDirectory = CacheManager().httpCacheFile
         )
-        RoomManager.init(context = RuntimeEnvironment.getApplication(), isInMemory = true)
 
-        val automotiveSDKComponent = DaggerAutomotiveSDKComponent.builder()
-            .networkModule(NetworkModule(retrofitClient = NetworkManager.retrofitClient))
-            .databaseModule(DatabaseModule())
-            .build()
-
-        Assert.assertNotNull(automotiveSDKComponent)
-        Assert.assertNotNull(automotiveSDKComponent.getUserRepository())
-        Assert.assertNotNull(automotiveSDKComponent.getStationService())
+        Assert.assertNotNull(sdkObj.automotiveSDKComponent)
+        Assert.assertNotNull(sdkObj.automotiveSDKComponent.getUserRepository())
+        Assert.assertNotNull(sdkObj.automotiveSDKComponent.getStationService())
     }
 }

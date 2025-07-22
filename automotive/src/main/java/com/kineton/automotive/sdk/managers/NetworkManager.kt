@@ -1,10 +1,11 @@
 package com.kineton.automotive.sdk.managers
 
-import android.util.Log
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.KotlinModule
+import com.kineton.automotive.sdk.BuildConfig
 import com.kineton.automotive.sdk.network.interceptors.BasicAuthIntercept
+import com.kineton.automotive.sdk.network.interceptors.LoggingInterceptor
 import com.kineton.automotive.sdk.network.interceptors.RequestSizeInterceptor
 import com.kineton.automotive.sdk.network.interceptors.ResponseSizeInterceptor
 import okhttp3.Cache
@@ -15,6 +16,8 @@ import java.io.File
 import java.util.concurrent.TimeUnit
 
 object NetworkManager {
+    private const val DEFAULT_CACHE_SIZE_MB = 25L
+    private const val MB_IN_BYTES = 1024L * 1024L
 
     private lateinit var httpCache: Cache
 
@@ -28,11 +31,12 @@ object NetworkManager {
         username: String,
         password: String,
         cacheDirectory: File,
-        cacheSizeInMB: Long =  25L * 1024L * 1024L,
+        cacheSizeInBytes: Long? = null,
         connectionTimeout: Long = 30,
         readTimeout: Long = 30
     ) {
-        val cache = Cache(cacheDirectory, cacheSizeInMB)
+        val actualCacheSize = cacheSizeInBytes ?: (DEFAULT_CACHE_SIZE_MB * MB_IN_BYTES)
+        val cache = Cache(cacheDirectory, actualCacheSize)
 
         val kotlinModule = KotlinModule
             .Builder()
@@ -42,14 +46,19 @@ object NetworkManager {
             .registerModule(kotlinModule)
             .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
 
-        val okHttpClient = OkHttpClient.Builder()
+        val okHttpClientBuilder = OkHttpClient.Builder()
             .cache(cache)
             .addInterceptor(BasicAuthIntercept(username, password))
             .addInterceptor(RequestSizeInterceptor())
             .addInterceptor(ResponseSizeInterceptor())
             .connectTimeout(connectionTimeout, TimeUnit.SECONDS)
             .readTimeout(readTimeout, TimeUnit.SECONDS)
-            .build()
+
+        if (BuildConfig.NETWORK_LOGGING) {
+            okHttpClientBuilder.addNetworkInterceptor(LoggingInterceptor())
+        }
+
+        val okHttpClient = okHttpClientBuilder.build()
 
         retrofitClient = Retrofit.Builder()
             .baseUrl(baseUrl)
@@ -60,14 +69,13 @@ object NetworkManager {
         httpCache = cache
     }
 
-    internal fun listCache() {
-        val urlIterator = httpCache.urls()
-        while (urlIterator.hasNext()) {
-            Log.d("NetworkManager", "Cached URL: ${urlIterator.next()}")
-        }
+    @JvmSynthetic
+    internal fun cacheSize(): Long {
+        return httpCache.size()
     }
 
-    private fun evictCache() {
+    @JvmSynthetic
+    internal fun evictCache() {
         httpCache.evictAll()
     }
 

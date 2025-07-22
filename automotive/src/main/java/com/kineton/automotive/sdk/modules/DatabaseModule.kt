@@ -9,7 +9,7 @@ import dagger.Provides
 
 // Dagger
 @Module
-internal class DatabaseModule() {
+class DatabaseModule {
     @Provides
     fun provideRoomUserDao(): RoomUserDao {
         return RoomManager.roomDb.getUserDao()

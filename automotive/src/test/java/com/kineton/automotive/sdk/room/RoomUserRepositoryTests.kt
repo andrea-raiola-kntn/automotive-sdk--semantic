@@ -1,8 +1,10 @@
 package com.kineton.automotive.sdk.room
 
+import androidx.startup.AppInitializer
 import com.kineton.automotive.sdk.AutomotiveSDKComponent
 import com.kineton.automotive.sdk.DaggerAutomotiveSDKComponent
 import com.kineton.automotive.sdk.entities.User
+import com.kineton.automotive.sdk.initializers.RoomInitializer
 import com.kineton.automotive.sdk.managers.RoomManager
 import com.kineton.automotive.sdk.modules.DatabaseModule
 import com.kineton.automotive.sdk.modules.NetworkModule
@@ -20,8 +22,7 @@ import org.robolectric.RuntimeEnvironment
 import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
-// TODO we need to replace the Base Manifest
-@Config(minSdk = 28)
+@Config(minSdk = 28, manifest = Config.NONE)
 class RoomUserRepositoryTests {
 
     lateinit var automotiveSDKComponent: AutomotiveSDKComponent
@@ -30,7 +31,12 @@ class RoomUserRepositoryTests {
 
     @Before
     fun `setup database`() {
-        RoomManager.init(context = RuntimeEnvironment.getApplication(), isInMemory = true)
+        val context = RuntimeEnvironment.getApplication()
+        check(context.packageName.contains(".test")) {
+            "This test must run in a test environment"
+        }
+
+        RoomManager.init(context = context, isInMemory = true)
         automotiveSDKComponent = DaggerAutomotiveSDKComponent.builder()
             .databaseModule(DatabaseModule())
             .networkModule(Mockito.mock(NetworkModule::class.java))

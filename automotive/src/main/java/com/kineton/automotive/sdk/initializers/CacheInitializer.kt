@@ -6,7 +6,7 @@ import com.kineton.automotive.sdk.managers.CacheManager
 
 class CacheInitializer : Initializer<Unit> {
     override fun create(context: Context) {
-        CacheManager().init(context)
+        CacheManager.init(context)
     }
 
     override fun dependencies(): List<Class<out Initializer<*>>> = emptyList()
