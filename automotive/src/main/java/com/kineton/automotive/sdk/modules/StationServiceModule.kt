@@ -1,7 +1,7 @@
 package com.kineton.automotive.sdk.modules
 
-import com.kineton.automotive.sdk.StationServiceImpl
 import com.kineton.automotive.sdk.StationService
+import com.kineton.automotive.sdk.StationServiceImpl
 import dagger.Binds
 import dagger.Module
 

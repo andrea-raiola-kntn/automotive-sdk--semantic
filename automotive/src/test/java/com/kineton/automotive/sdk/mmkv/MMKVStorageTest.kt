@@ -1,6 +1,5 @@
 package com.kineton.automotive.sdk.mmkv
 
-import com.kineton.automotive.sdk.managers.MMKVManager
 import com.kineton.automotive.sdk.storage.MMKVStorage
 import com.tencent.mmkv.MMKV
 import org.junit.Assert

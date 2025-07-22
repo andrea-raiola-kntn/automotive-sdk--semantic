@@ -2,14 +2,7 @@ package com.kineton.automotive.sdk
 
 import androidx.startup.AppInitializer
 import com.kineton.automotive.sdk.initializers.CacheInitializer
-import com.kineton.automotive.sdk.initializers.MMKVInitializer
 import com.kineton.automotive.sdk.initializers.RoomInitializer
-import com.kineton.automotive.sdk.managers.CacheManager
-import com.kineton.automotive.sdk.managers.RoomManager
-import com.kineton.automotive.sdk.modules.DatabaseModule
-import com.kineton.automotive.sdk.modules.NetworkModule
-import com.kineton.automotive.sdk.managers.NetworkManager
-import kotlinx.coroutines.runBlocking
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
@@ -17,7 +10,6 @@ import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
 import org.robolectric.annotation.Config
-import java.io.File
 
 @RunWith(RobolectricTestRunner::class)
 @Config(minSdk = 28, manifest = Config.NONE)

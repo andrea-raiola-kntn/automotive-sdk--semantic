@@ -1,9 +1,9 @@
 package com.kineton.automotive.sdk
 
 import com.kineton.automotive.sdk.managers.CacheManager
+import com.kineton.automotive.sdk.managers.NetworkManager
 import com.kineton.automotive.sdk.modules.DatabaseModule
 import com.kineton.automotive.sdk.modules.NetworkModule
-import com.kineton.automotive.sdk.managers.NetworkManager
 
 class AutomotiveSDK {
     lateinit var automotiveSDKComponent: AutomotiveSDKComponent

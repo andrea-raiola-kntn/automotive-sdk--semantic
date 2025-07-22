@@ -10,8 +10,8 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.future.future
 import kotlinx.coroutines.withContext
-import javax.inject.Inject
 import java.util.concurrent.CompletableFuture
+import javax.inject.Inject
 
 class StationServiceImpl @Inject constructor(
     private val radioStationApiService: RadioStationApiService,
