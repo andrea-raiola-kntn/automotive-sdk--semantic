@@ -171,8 +171,15 @@ dependencies {
     implementation(libs.dagger)
     ksp(libs.dagger.compiler)
 
-    // Ok Http3
+    // Okhttp3
     implementation(libs.okhttp)
+
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:3.0.0")
+    implementation("com.squareup.retrofit2:converter-jackson:3.0.0")
+
+    // Jackson
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.19.2")
 
     // Test
     testImplementation(libs.junit)

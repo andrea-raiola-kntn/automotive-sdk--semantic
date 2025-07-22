@@ -20,6 +20,10 @@
             <!-- This entry makes RoomInitializer discoverable. -->
             <meta-data  android:name="com.kineton.automotive.sdk.initializers.RoomInitializer"
                 android:value="androidx.startup" />
+
+            <!-- This entry makes CacheInitializer discoverable. -->
+            <meta-data  android:name="com.kineton.automotive.sdk.initializers.CacheInitializer"
+                android:value="androidx.startup" />
         </provider>
     </application>
 </manifest>
