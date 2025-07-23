@@ -1,0 +1,130 @@
+# Third Party Licenses
+
+This document lists the third-party libraries used in this project along with their respective licenses and official URLs.
+
+---
+
+## 1. Detekt
+- **URL:** [https://detekt.dev/docs/intro](https://detekt.dev/docs/intro)
+- **License:** Apache License 2.0
+- **Summary:**
+  Static code analysis tool for Kotlin. Licensed under Apache 2.0.
+
+---
+
+## 2. Google KSP (Kotlin Symbol Processing)
+- **URL:** [https://github.com/google/ksp](https://github.com/google/ksp)
+- **License:** Apache License 2.0
+- **Summary:**
+  Kotlin annotation processing tool. Licensed under Apache 2.0.
+
+---
+
+## 3. Android Room
+- **URL:** [https://developer.android.com/jetpack/androidx/releases/room](https://developer.android.com/jetpack/androidx/releases/room)
+- **License:** Apache License 2.0
+- **Summary:**
+  SQLite object mapping library for Android. Licensed under Apache 2.0.
+
+---
+
+## 4. MMKV
+- **URL:** [https://github.com/Tencent/MMKV](https://github.com/Tencent/MMKV)
+- **License:** BSD 3-Clause License
+- **Summary:**
+  Efficient key-value storage library developed by Tencent. BSD 3-Clause License.
+
+---
+
+## 5. Android App Startup
+- **URL:** [https://developer.android.com/topic/libraries/app-startup](https://developer.android.com/topic/libraries/app-startup)
+- **License:** Apache License 2.0
+- **Summary:**
+  Library to initialize components at app startup. Licensed under Apache 2.0.
+
+---
+
+## 6. JUnit 4
+- **URL:** [https://junit.org/junit4/](https://junit.org/junit4/)
+- **License:** Eclipse Public License 1.0
+- **Summary:**
+  Java testing framework. Licensed under EPL 1.0.
+
+---
+
+## 7. AndroidX Test Runner (JUnit4 Android)
+- **URL:** [https://developer.android.com/training/testing/instrumented-tests/androidx-test-libraries/runner](https://developer.android.com/training/testing/instrumented-tests/androidx-test-libraries/runner)
+- **License:** Apache License 2.0
+- **Summary:**
+  Android testing libraries for instrumentation tests. Licensed under Apache 2.0.
+
+---
+
+## 8. Mockito
+- **URL:** [https://site.mockito.org/](https://site.mockito.org/)
+- **License:** MIT License
+- **Summary:**
+  Mocking framework for Java unit tests. MIT License.
+
+---
+
+## 9. OkHttp3
+- **URL:** [https://square.github.io/okhttp/](https://square.github.io/okhttp/)
+- **License:** Apache License 2.0
+- **Summary:**
+  HTTP client for Android and Java applications. Licensed under Apache 2.0.
+
+---
+
+## 10. JaCoCo
+- **URL:** [https://www.jacoco.org/jacoco/trunk/doc/index.html](https://www.jacoco.org/jacoco/trunk/doc/index.html)
+- **License:** Eclipse Public License 2.0
+- **Summary:**
+  Java code coverage library. Licensed under EPL 2.0.
+
+---
+
+## 11. Robolectric
+- **URL:** [https://developer.android.com/training/testing/local-tests/robolectric](https://developer.android.com/training/testing/local-tests/robolectric)
+- **License:** Apache License 2.0
+- **Summary:**
+  Framework to run Android tests on the JVM. Licensed under Apache 2.0.
+
+---
+
+## 12. Dagger 2
+- **URL:** [https://developer.android.com/training/dependency-injection/dagger-android](https://developer.android.com/training/dependency-injection/dagger-android)
+- **License:** Apache License 2.0
+- **Summary:**
+  Dependency injection framework for Java and Android. Licensed under Apache 2.0.
+
+---
+
+## 13. Jackson Kotlin Module
+- **URL:** [https://github.com/FasterXML/jackson-module-kotlin](https://github.com/FasterXML/jackson-module-kotlin)
+- **License:** Apache License 2.0
+- **Summary:**
+  Jackson module providing Kotlin support. Licensed under Apache 2.0.
+
+---
+
+## 14. Retrofit2
+- **URL:** [https://square.github.io/retrofit/](https://square.github.io/retrofit/)
+- **License:** Apache License 2.0
+- **Summary:**
+  Type-safe HTTP client for Android and Java. Licensed under Apache 2.0.
+
+---
+
+## 15. Dokka
+- **URL:** [https://github.com/Kotlin/dokka](https://github.com/Kotlin/dokka)
+- **License:** Apache License 2.0
+- **Summary:**
+  Documentation engine for Kotlin projects. Licensed under Apache 2.0.
+
+---
+
+## Final Notes
+
+This document lists all third-party components included in this software product along with their license information.
+Please refer to the original license files in each library's repository for full terms and conditions.

@@ -1,0 +1,1 @@
+sourceset_dependencies='{":automotive/core":[],":automotive/coreDebug":[],":automotive/coreRelease":[],":automotive/debug":[],":automotive/main":[],":automotive/release":[]}'
