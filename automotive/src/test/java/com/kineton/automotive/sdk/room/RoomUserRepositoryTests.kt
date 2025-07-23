@@ -20,8 +20,7 @@ import org.robolectric.RuntimeEnvironment
 import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
-// TODO we need to replace the Base Manifest
-@Config(minSdk = 28)
+@Config(minSdk = 28, manifest = Config.NONE)
 class RoomUserRepositoryTests {
 
     lateinit var automotiveSDKComponent: AutomotiveSDKComponent
@@ -30,7 +29,12 @@ class RoomUserRepositoryTests {
 
     @Before
     fun `setup database`() {
-        RoomManager.init(context = RuntimeEnvironment.getApplication(), isInMemory = true)
+        val context = RuntimeEnvironment.getApplication()
+        check(context.packageName.contains(".test")) {
+            "This test must run in a test environment"
+        }
+
+        RoomManager.init(context = context, isInMemory = true)
         automotiveSDKComponent = DaggerAutomotiveSDKComponent.builder()
             .databaseModule(DatabaseModule())
             .networkModule(Mockito.mock(NetworkModule::class.java))

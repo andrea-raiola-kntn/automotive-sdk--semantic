@@ -30,7 +30,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Publish package
-        run: ./gradlew publish
+        run: ./gradlew publishAllPublicationsToGitHubPackagesRepository
         env:
           USERNAME_GITHUB: ${{ github.actor }}
           TOKEN_GITHUB: ${{ secrets.GITHUB_TOKEN }}
