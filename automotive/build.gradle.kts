@@ -1,11 +1,14 @@
 import org.w3c.dom.Document
 import javax.xml.parsers.DocumentBuilderFactory
 
+val libraryVersion = rootProject.file("version.txt").readText().trim()
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     id("io.gitlab.arturbosch.detekt") version "1.23.8"
     id("com.google.devtools.ksp")
+    id("org.jetbrains.dokka")
     id("maven-publish")
     jacoco
 }
@@ -18,6 +21,16 @@ jacoco {
     toolVersion = "0.8.13"
 }
 
+detekt {
+    config.setFrom("detekt.yml")
+}
+
+dokka {
+    dokkaPublications.html {
+        outputDirectory.set(rootDir.resolve("docs/${libraryVersion}"))
+    }
+}
+
 publishing {
     publications {
         create<MavenPublication>("coreRelease") {
@@ -26,7 +39,16 @@ publishing {
             }
             groupId = "com.kineton.automotive"
             artifactId = "sdk"
-            version = rootProject.file("version.txt").readText().trim()
+            version = libraryVersion
+        }
+
+        create<MavenPublication>("coreDebug") {
+            afterEvaluate {
+                from(components["coreDebug"])
+            }
+            groupId = "com.kineton.automotive"
+            artifactId = "sdk"
+            version = libraryVersion + "-debug"
         }
     }
 
@@ -58,6 +80,15 @@ android {
             withSourcesJar()
             withJavadocJar()
         }
+
+        singleVariant("coreDebug") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 
     buildTypes {
@@ -67,10 +98,12 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("Boolean", "NETWORK_LOGGING", "false")
         }
 
         debug {
             enableAndroidTestCoverage = true
+            buildConfigField("Boolean", "NETWORK_LOGGING", "true")
         }
     }
 
@@ -106,7 +139,6 @@ tasks.withType<Test> {
 }
 
 tasks.register<JacocoReport>("jacocoCoverage") {
-    dependsOn("testCoreDebugUnitTest")
     group = "Reporting"
     description = "Execute Unit Test and Instrumentation Test, generate and combine Jacoco coverage report"
 
@@ -171,8 +203,15 @@ dependencies {
     implementation(libs.dagger)
     ksp(libs.dagger.compiler)
 
-    // Ok Http3
+    // Okhttp3
     implementation(libs.okhttp)
+
+    // Jackson
+    implementation(libs.jackson.module.kotlin)
+
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.jackson)
 
     // Test
     testImplementation(libs.junit)

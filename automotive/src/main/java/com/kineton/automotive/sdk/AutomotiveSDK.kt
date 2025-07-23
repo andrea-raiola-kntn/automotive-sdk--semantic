@@ -1,8 +1,9 @@
 package com.kineton.automotive.sdk
 
+import com.kineton.automotive.sdk.managers.CacheManager
+import com.kineton.automotive.sdk.managers.NetworkManager
 import com.kineton.automotive.sdk.modules.DatabaseModule
 import com.kineton.automotive.sdk.modules.NetworkModule
-import com.kineton.automotive.sdk.network.NetworkClient
 
 class AutomotiveSDK {
     lateinit var automotiveSDKComponent: AutomotiveSDKComponent
@@ -11,15 +12,17 @@ class AutomotiveSDK {
     @JvmOverloads
     fun init(username: String, password: String, baseUrl: String = "https://core-search.radioplayer.cloud") {
         print("AutomotiveSDK init...")
-        NetworkClient.init(
+        NetworkManager.init(
             baseUrl = baseUrl,
             username = username,
-            password = password
+            password = password,
+            cacheDirectory = CacheManager.httpCacheFile
         )
 
+        val networkModule = NetworkModule(NetworkManager.retrofitClient)
         automotiveSDKComponent = DaggerAutomotiveSDKComponent.builder()
             .databaseModule(DatabaseModule())
-            .networkModule(NetworkModule(NetworkClient))
+            .networkModule(networkModule)
             .build()
     }
 }
