@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.12.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.11.0...v1.12.0) (2025-07-23)
+
+
+### Features
+
+* okHttp with Jackson and Retrofit ([d6588bf](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/d6588bf178eb1005cb6322ee4992f38aa1ae7ccd))
+
+
+### Bug Fixes
+
+* develop workflow ([1788fc0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/1788fc0ffeeb9df6e8e517d344acd0326a88da8c))
+* dokka 2 plugin enabled ([10e2f34](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/10e2f3440ee7e1cc8a8e239e6816f0092dcfe64f))
+
 ## [1.11.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.10.0...v1.11.0) (2025-07-21)
 
 
