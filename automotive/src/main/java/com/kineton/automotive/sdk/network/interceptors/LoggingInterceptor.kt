@@ -9,6 +9,7 @@ class LoggingInterceptor : Interceptor {
 
     companion object {
         private const val TAG = "LoggingInterceptor"
+        private const val NANOS_PER_MILLI = 1_000_000L
     }
 
     @Throws(IOException::class)
@@ -21,8 +22,11 @@ class LoggingInterceptor : Interceptor {
         val response = chain.proceed(request)
 
         val t2 = System.nanoTime()
-        Log.d(TAG, "Received response for ${response.request.url} in ${(t2 - t1) / 1e6}ms\n${response.headers}")
-
+        Log.d(
+            TAG,
+            "Received response for ${response.request.url} in ${(t2 - t1) / NANOS_PER_MILLI}ms\n" +
+                    response.headers.toString()
+        )
         return response
     }
 }
