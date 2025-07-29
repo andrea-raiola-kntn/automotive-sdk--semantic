@@ -19,8 +19,6 @@ class LoggingInterceptor : Interceptor {
         val t1 = System.nanoTime()
         Log.d(TAG, "Sending request ${request.url} on ${chain.connection()}\n${request.headers}")
 
-        Log.d(TAG, "Sending request ${request.url} on ${chain.connection()}\n${request.headers}")
-
 
         val response = chain.proceed(request)
 
