@@ -1,9 +1,10 @@
-name: Release Please
+name: Versioning
 
 on:
   push:
     branches:
       - 'main'
+      - 'next'
 
 permissions:
   contents: write
@@ -11,10 +12,29 @@ permissions:
   issues: write
 
 jobs:
-  release-please:
+  semantic-release:
     runs-on: ubuntu-latest
     steps:
-      - uses: googleapis/release-please-action@v4
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          release-type: simple
-          target-branch: 'main'
+          cache: 'yarn'
+          node-version: '18'
+
+      - name: Install dependencies
+        run: |
+          npm install semantic-release \
+          @semantic-release/commit-analyzer \
+          @semantic-release/release-notes-generator \
+          @semantic-release/exec \
+          @semantic-release/git \
+          @semantic-release/github \
+          @semantic-release/changelog
+
+      - name: Run Semantic Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
