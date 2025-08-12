@@ -3,8 +3,8 @@ name: Publish package to GitHub Packages
 on:
   push:
     branches:
-      - 'main'
-      - 'next'
+      - main
+      - next
     paths:
       - 'version.txt'
 
