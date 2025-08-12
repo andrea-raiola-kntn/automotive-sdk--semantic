@@ -1,4 +1,4 @@
-# [1.13.0-next.1](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.12.0...v1.13.0-next.1) (2025-08-12)
+# [1.13.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.12.0...v1.13.0) (2025-08-12)
 
 
 ### Bug Fixes
