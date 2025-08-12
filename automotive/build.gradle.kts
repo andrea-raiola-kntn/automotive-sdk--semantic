@@ -48,7 +48,7 @@ publishing {
             }
             groupId = "com.kineton.automotive"
             artifactId = "sdk"
-            version = libraryVersion + "-debug"
+            version = "$libraryVersion-debug"
         }
     }
 
