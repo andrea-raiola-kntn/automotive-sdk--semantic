@@ -1,3 +1,16 @@
+# [1.14.0-next.1](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.13.1-next.1...v1.14.0-next.1) (2025-08-12)
+
+
+### Bug Fixes
+
+* publish on next not triggered ([5a5a59f](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/5a5a59f1d06888205c4ec22af82bbd0e65ee46d6))
+* remove beta channel for develop ([907be69](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/907be695ccfe6794ef1ac4cc4f00fc87180a57e5))
+
+
+### Features
+
+* next -> rc and develop -> beta ([e41b320](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/e41b320e0ba16658f0d8417e93ab600291441896))
+
 ## [1.13.1-next.1](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.13.0...v1.13.1-next.1) (2025-08-12)
 
 
