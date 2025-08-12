@@ -1,3 +1,11 @@
+## [1.14.1-next.1](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.14.0...v1.14.1-next.1) (2025-08-12)
+
+
+### Bug Fixes
+
+* publish.yaml ([9a2b02a](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/9a2b02aff4d3d9d379bbb20cfaf8ad62c60238ad))
+* publish.yaml ([8639dc9](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/8639dc9d49f09552f237266c8edaee029940db16))
+
 # [1.14.0-next.3](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.14.0-next.2...v1.14.0-next.3) (2025-08-12)
 # [1.14.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.13.0...v1.14.0) (2025-08-12)
 
