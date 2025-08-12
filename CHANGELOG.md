@@ -1,3 +1,10 @@
+## [1.13.1-next.1](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.13.0...v1.13.1-next.1) (2025-08-12)
+
+
+### Bug Fixes
+
+* pull-request creation checks ([ca235c6](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/ca235c6cb31b03bceb8803ed013921ad8fc0d9e0))
+
 # [1.13.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.12.0...v1.13.0) (2025-08-12)
 
 
