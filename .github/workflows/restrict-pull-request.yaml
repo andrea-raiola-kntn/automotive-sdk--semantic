@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
       - main
+      - next
       - develop
 
 jobs:
@@ -20,7 +21,12 @@ jobs:
 
           if [[ "${{ github.base_ref }}" == "main" ]]; then
             # Allow only from develop or hotfix/*
-            if [[ "${{ github.head_ref }}" == "develop" || "${{ github.head_ref }}" == hotfix/* ]]; then
+            if [[ "${{ github.head_ref }}" == "develop" || "${{ github.head_ref }}" == next || "${{ github.head_ref }}" == hotfix/* ]]; then
+              VALID=true
+            fi
+          elif [[ "${{ github.base_ref }}" == "next" ]]; then
+            # Allow only from develop/*
+            if [[ "${{ github.head_ref }}" == "develop" ]]; then
               VALID=true
             fi
           elif [[ "${{ github.base_ref }}" == "develop" ]]; then
@@ -43,11 +49,13 @@ jobs:
             let message = "";
 
             if (base === "main") {
-              message = `🚫 PRs into \`main\` are only allowed from \`develop\` or \`hotfix/*\`. This PR is from \`${head}\`.`;
+              message = `PRs into \`main\` are only allowed from \`develop\`, \`next\ or \`hotfix/*\`. This PR is from \`${head}\`.`;
             } else if (base === "develop") {
-              message = `🚫 PRs into \`develop\` are only allowed from \`feature/*\`, \`bugfix/*\`, or \`hotfix/*\`. This PR is from \`${head}\`.`;
+              message = `PRs into \`develop\` are only allowed from \`feature/*\`, \`bugfix/*\`, or \`hotfix/*\`. This PR is from \`${head}\`.`;
+            } else if (base === "next") {
+              message = `PRs into \`next\` are only allowed from \`develop\`. This PR is from \`${head}\`.`;
             } else {
-              message = `🚫 This PR does not follow the branch naming rules.`;
+              message = `This PR does not follow the branch naming rules.`;
             }
 
             await github.rest.issues.createComment({
