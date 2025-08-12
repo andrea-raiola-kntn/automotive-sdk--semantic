@@ -1,11 +1,6 @@
 name: Publish package to GitHub Packages
 
 on:
-  workflow_run:
-    workflows: [ "Versioning" ]
-    branches: [ "main", "next" ]
-    types:
-      - completed
   push:
     branches:
       - main
