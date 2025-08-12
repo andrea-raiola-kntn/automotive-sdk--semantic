@@ -5,11 +5,8 @@
     },
     {
       "name": "next",
-      "prerelease": "rc"
-    },
-    {
-      "name": "develop",
-      "prerelease": "beta"
+      "channel": "next",
+      "prerelease": true
     }
   ],
   "plugins": [
