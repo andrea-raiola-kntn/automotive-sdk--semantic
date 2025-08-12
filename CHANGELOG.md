@@ -1,3 +1,16 @@
+# [1.13.0](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.12.0...v1.13.0) (2025-08-12)
+
+
+### Bug Fixes
+
+* versioning.yaml ([69b7de5](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/69b7de524c8249281b4207113763ab4744f6900c))
+
+
+### Features
+
+* add package.json with deps ([df014c5](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/df014c530d41cb74c104bb755c8d0aa86855eba9))
+* added semantic release ([f2bbc85](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/f2bbc851d3d52280941515cc60afb0c7e1a74b8d))
+
 # [1.12.0-next.1](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.11.0...v1.12.0-next.1) (2025-08-11)
 
 
