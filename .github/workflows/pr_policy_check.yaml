@@ -1,40 +1,40 @@
-name: Validate PR source branch
+name: PR Policy Check
 
 on:
-  pull_request:
+  pull_request_target:
+    types: [opened, reopened]
     branches:
       - main
       - next
       - develop
 
 jobs:
-  restrict-prs:
+  pr-policy-check:
     runs-on: ubuntu-latest
     steps:
-      - name: Validate source branch name
-        id: validate
+      - name: Set vars
         run: |
           echo "BASE=${{ github.base_ref }}" >> $GITHUB_ENV
           echo "HEAD=${{ github.head_ref }}" >> $GITHUB_ENV
 
+      - name: Validate source branch name
+        id: validate
+        run: |
+          BASE="${{ github.base_ref }}"
+          HEAD="${{ github.head_ref }}"
           VALID=false
 
-          if [[ "${{ github.base_ref }}" == "main" ]]; then
-            # Allow only from next or hotfix/*
-            if [[ "${{ github.head_ref }}" == next || "${{ github.head_ref }}" == hotfix/* ]]; then
-              VALID=true
-            fi
-          elif [[ "${{ github.base_ref }}" == "next" ]]; then
-            # Allow only from develop and next/*
-            if [[ "${{ github.head_ref }}" == "develop" || "${{ github.head_ref }}" == hotfix/*  ]]; then
-              VALID=true
-            fi
-          elif [[ "${{ github.base_ref }}" == "develop" ]]; then
-            # Allow only from feature/*, bugfix/*, or hotfix/*
-            if [[ "${{ github.head_ref }}" == feature/* || "${{ github.head_ref }}" == bugfix/* || "${{ github.head_ref }}" == hotfix/* || "${{ github.head_ref }}" == dependabot/gradle/* ]]; then
-              VALID=true
-            fi
-          fi
+          case "$BASE" in
+            main)
+              if [[ "$HEAD" == "next" || "$HEAD" == hotfix/* ]]; then VALID=true; fi
+              ;;
+            next)
+              if [[ "$HEAD" == "develop" || "$HEAD" == hotfix/* ]]; then VALID=true; fi
+              ;;
+            develop)
+              if [[ "$HEAD" == feature/* || "$HEAD" == bugfix/* || "$HEAD" == hotfix/* || "$HEAD" == dependabot/gradle/* ]]; then VALID=true; fi
+              ;;
+          esac
 
           echo "VALID=$VALID" >> $GITHUB_ENV
 
@@ -49,11 +49,11 @@ jobs:
             let message = "";
 
             if (base === "main") {
-              message = `PRs into \`main\` are only allowed from \`develop\`, \`next\ or \`hotfix/*\`. This PR is from \`${head}\`.`;
+              message = `PRs into \`main\` are only allowed from \`next\` or \`hotfix/*\`. This PR is from \`${head}\`.`;
             } else if (base === "develop") {
               message = `PRs into \`develop\` are only allowed from \`feature/*\`, \`bugfix/*\`, or \`hotfix/*\`. This PR is from \`${head}\`.`;
             } else if (base === "next") {
-              message = `PRs into \`next\` are only allowed from \`develop\`. This PR is from \`${head}\`.`;
+              message = `PRs into \`next\` are only allowed from \`develop\` or \`hotfix/*\`. This PR is from \`${head}\`.`;
             } else {
               message = `This PR does not follow the branch naming rules.`;
             }
