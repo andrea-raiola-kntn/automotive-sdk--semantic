@@ -61,7 +61,7 @@ jobs:
         run: |
           git fetch origin
           git checkout develop || git checkout -b develop origin/develop
-          git merge origin/main --no-edit --no-ff
+          git merge main --no-edit --no-ff
           git push origin develop
 
 #      - name: Create Pull Request from main to develop
