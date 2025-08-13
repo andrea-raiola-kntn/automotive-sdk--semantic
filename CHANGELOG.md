@@ -1,3 +1,10 @@
+## [1.15.7-next.2](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.15.7-next.1...v1.15.7-next.2) (2025-08-13)
+
+
+### Bug Fixes
+
+* condition on publish-aar.yaml ([85bcd5c](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/85bcd5ce614183cc109e3f9e30a40e98f61820e9))
+
 ## [1.15.7-next.1](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.15.6...v1.15.7-next.1) (2025-08-13)
 
 
