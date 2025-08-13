@@ -21,7 +21,7 @@ jobs:
 
           if [[ "${{ github.base_ref }}" == "main" ]]; then
             # Allow only from develop or hotfix/*
-            if [[ "${{ github.head_ref }}" == "develop" || "${{ github.head_ref }}" == next || "${{ github.head_ref }}" == hotfix/* ]]; then
+            if [[ "${{ github.head_ref }}" == next || "${{ github.head_ref }}" == hotfix/* ]]; then
               VALID=true
             fi
           elif [[ "${{ github.base_ref }}" == "next" ]]; then
