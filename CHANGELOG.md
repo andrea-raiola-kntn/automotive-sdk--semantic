@@ -1,3 +1,11 @@
+## [1.15.2-next.1](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.15.1...v1.15.2-next.1) (2025-08-13)
+
+
+### Bug Fixes
+
+* merge main into develop after semVer ([4801b86](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/4801b86e445e4916f2ba1c038a33b6d35bf1b17d))
+* usplit publish and update templates ([ad680fb](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/ad680fb4ebff0bb3a5f0c6140d853cc3801673a8))
+
 ## [1.15.1](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.15.0...v1.15.1) (2025-08-13)
 
 
