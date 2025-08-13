@@ -1,4 +1,4 @@
-name: PR Checks
+name: PR to Develop Checks
 
 on:
   pull_request:
