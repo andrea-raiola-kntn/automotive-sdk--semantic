@@ -61,5 +61,17 @@ jobs:
         run: |
           git fetch origin
           git checkout develop || git checkout -b develop origin/develop
-          git merge origin/main --no-edit
+          git merge origin/main --no-edit --no-ff
           git push origin develop
+
+#      - name: Create Pull Request from main to develop
+#        uses: peter-evans/create-pull-request@v6
+#        with:
+#          token: ${{ secrets.GITHUB_TOKEN }}
+#          base: develop
+#          branch: sync/main-to-develop
+#          title: "Sync main to develop after release"
+#          body: |
+#            This PR syncs changes from `main` into `develop`.
+#          commit-message: "chore: sync main to develop after a stable release"
+#          labels: sync
