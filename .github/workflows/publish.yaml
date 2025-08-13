@@ -2,22 +2,16 @@ name: Publish package to GitHub Packages
 
 on:
   workflow_run:
-    workflows: [ "Versioning" ]
-    branches: [ "main", "next" ]
-    types:
-      - completed
-
-#  push:
-#    branches:
-#      - main
-#      - next
-#    paths:
-#      - 'version.txt'
+    workflows: ["Versioning"]
+    types: [completed]
+    branches:
+      - main
+      - next
 
   workflow_dispatch:
 
 jobs:
-  publish-aar:
+  publish-sdk:
     runs-on: ubuntu-latest
 
     permissions:
