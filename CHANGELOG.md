@@ -1,3 +1,10 @@
+## [1.15.5](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.15.4...v1.15.5) (2025-08-13)
+
+
+### Bug Fixes
+
+* actions p-42 ([2fbd60f](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/2fbd60f998f0b6060a403fab7a87e1106d8df670))
+
 ## [1.15.5-next.1](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.15.4...v1.15.5-next.1) (2025-08-13)
 
 
