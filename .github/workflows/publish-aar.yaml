@@ -2,7 +2,7 @@ name: Publish .aar
 
 on:
   workflow_run:
-    workflows: ["Versioning"]
+    workflows: ["Semantic Version"]
     types: [completed]
     branches:
       - main
