@@ -3,7 +3,7 @@ name: PR to Develop Checks
 on:
   pull_request:
     branches:
-      - 'develop'
+      - develop
     types: [opened, reopened, synchronize, edited]
 
 permissions:
