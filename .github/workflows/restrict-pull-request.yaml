@@ -20,13 +20,13 @@ jobs:
           VALID=false
 
           if [[ "${{ github.base_ref }}" == "main" ]]; then
-            # Allow only from develop or hotfix/*
+            # Allow only from next or hotfix/*
             if [[ "${{ github.head_ref }}" == next || "${{ github.head_ref }}" == hotfix/* ]]; then
               VALID=true
             fi
           elif [[ "${{ github.base_ref }}" == "next" ]]; then
-            # Allow only from develop/*
-            if [[ "${{ github.head_ref }}" == "develop" ]]; then
+            # Allow only from develop and next/*
+            if [[ "${{ github.head_ref }}" == "develop" || "${{ github.head_ref }}" == hotfix/*  ]]; then
               VALID=true
             fi
           elif [[ "${{ github.base_ref }}" == "develop" ]]; then
