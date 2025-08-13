@@ -41,6 +41,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Configure git
         run: |
@@ -50,6 +53,6 @@ jobs:
       - name: Merge main into develop
         run: |
           git fetch origin
-          git checkout -b develop origin/develop
+          git checkout develop || git checkout -b develop origin/develop
           git merge origin/main --no-edit
           git push origin develop
