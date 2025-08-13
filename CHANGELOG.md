@@ -1,3 +1,10 @@
+# [1.15.0-next.2](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.15.0-next.1...v1.15.0-next.2) (2025-08-13)
+
+
+### Bug Fixes
+
+* update publish ([4cfbb56](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/4cfbb569cc9c9544d7082ead58459b1264693557))
+
 # [1.15.0-next.1](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.14.1-next.1...v1.15.0-next.1) (2025-08-13)
 
 
