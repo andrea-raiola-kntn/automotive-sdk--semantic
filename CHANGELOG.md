@@ -1,3 +1,27 @@
+## [1.15.7](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.15.6...v1.15.7) (2025-08-13)
+
+
+### Bug Fixes
+
+* condition on publish-aar.yaml ([85bcd5c](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/85bcd5ce614183cc109e3f9e30a40e98f61820e9))
+* disable ff ([5271237](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/5271237d1b29aaaf6ab2bf43ffdfad9f72e7a407))
+* fix action [#176](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/issues/176) ([18572f3](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/18572f3b9a4fcc2074062dabe59bfb2b3d970055))
+
+## [1.15.7-next.2](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.15.7-next.1...v1.15.7-next.2) (2025-08-13)
+
+
+### Bug Fixes
+
+* condition on publish-aar.yaml ([85bcd5c](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/85bcd5ce614183cc109e3f9e30a40e98f61820e9))
+
+## [1.15.7-next.1](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.15.6...v1.15.7-next.1) (2025-08-13)
+
+
+### Bug Fixes
+
+* disable ff ([5271237](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/5271237d1b29aaaf6ab2bf43ffdfad9f72e7a407))
+* fix action [#176](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/issues/176) ([18572f3](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/18572f3b9a4fcc2074062dabe59bfb2b3d970055))
+
 ## [1.15.6](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.15.5...v1.15.6) (2025-08-13)
 
 
