@@ -42,6 +42,22 @@ Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines on how to contrib
 
 Please read our [Code of Conduct](./CODE_OF_CONDUCT.md) to help us maintain a welcoming community.
 
+## Github Flow
+flowchart LR
+    subgraph Branches
+        F[feature/*] --> D
+        B[bugfix/*] --> D
+        H[hotfix/*] --> M
+    end
+
+    D[develop] --> N[next (rc)]
+    N --> M[main (stable)]
+
+    M -. merge .-> D
+    N -. merge .-> D
+    M -. merge .-> N
+    H --> M
+
 ## Security
 
 To report security issues, please check [SECURITY.md](./SECURITY.md).
