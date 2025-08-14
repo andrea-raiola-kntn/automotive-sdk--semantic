@@ -45,19 +45,25 @@ Please read our [Code of Conduct](./CODE_OF_CONDUCT.md) to help us maintain a we
 ## Github Flow
 ```mermaid
 flowchart LR
-    subgraph Branches
-        F[feature/*] --> D
-        B[bugfix/*] --> D
-        H[hotfix/*] --> M
-    end
+    %% Feature/Bugfix merge
+    F[feature/*] -. PR .-> D[develop]
+    B[bugfix/*] -. PR .-> D
 
-    D[develop] --> N["next (rc)"]
-    N --> M["main (stable)"]
+    %% Release flow
+    D -.  PR .-> N["next (rc)"]
+    N -.  PR .-> M["main (stable)"]
 
-    M -. merge .-> D
-    N -. merge .-> D
-    M -. merge .-> N
-    H --> M
+    %% Hotfix flow
+    M .-> H[hotfix/*]
+    H[hotfix/*] -. PR .-> M
+    H[hotfix/*] -. PR .-> D
+    H[hotfix/*] -. PR .-> N
+
+    %% GitHub Config flow
+    G[github-config] -. merge .-> M
+    G[github-config] -. merge .-> D
+    G[github-config] -. merge .-> N
+
 
 ```
 
