@@ -46,25 +46,32 @@ Please read our [Code of Conduct](./CODE_OF_CONDUCT.md) to help us maintain a we
 ```mermaid
 flowchart LR
     %% Feature/Bugfix merge
-    F[feature/*] -. PR .-> D[develop]
-    B[bugfix/*] -. PR .-> D
+    F[feature/*] -. PR (merge request) .-> D[develop]
+    B[bugfix/*]  -. PR (merge request) .-> D
 
     %% Release flow
-    D -.  PR .-> N["next (rc)"]
-    N -.  PR .-> M["main (stable)"]
+    D -. PR (release candidate) .-> N["next (rc)"]
+    N -. PR (stable release) .-> M["main (stable)"]
 
     %% Hotfix flow
-    M .-> H[hotfix/*]
-    H[hotfix/*] -. PR .-> M
-    H[hotfix/*] -. PR .-> D
-    H[hotfix/*] -. PR .-> N
+    M -- create branch --> H[hotfix/*]
+    H -. PR (hotfix) .-> M
+    H -. PR (sync) .-> N
+    H -. merge (backport) .-> D
 
     %% GitHub Config flow
-    G[github-config] -. merge .-> M
-    G[github-config] -. merge .-> D
-    G[github-config] -. merge .-> N
+    G[github-config] -. merge (sync) .-> M
+    G -. merge (sync) .-> D
+    G -. merge (sync) .-> N
 
-
+    %% Styling
+    style F fill:#e3f2fd,stroke:#1e88e5,stroke-width:2px
+    style B fill:#e3f2fd,stroke:#1e88e5,stroke-width:2px
+    style D fill:#fff8e1,stroke:#fbc02d,stroke-width:2px
+    style N fill:#f1f8e9,stroke:#7cb342,stroke-width:2px
+    style M fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+    style H fill:#ffebee,stroke:#d32f2f,stroke-width:2px
+    style G fill:#ede7f6,stroke:#512da8,stroke-width:2px
 ```
 
 ## Security
