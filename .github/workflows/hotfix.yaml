@@ -1,18 +1,15 @@
-name: Hotfix PR Validation (→ develop)
+name: Hotfix PR Validation (→ main|next)
 
 on:
   pull_request:
     branches:
-      - develop
+      - main
+      - next
     types: [opened, reopened, synchronize, edited]
 
-permissions:
-  contents: read
-  pull-requests: write
-
 jobs:
-  pr-checks:
-    name: Code Quality, Coverage, and Unit Tests
+  quality-checks:
+    if: startsWith(github.head_ref, 'hotfix/')
     runs-on: ubuntu-latest
 
     steps:
