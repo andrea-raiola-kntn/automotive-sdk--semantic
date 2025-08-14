@@ -8,6 +8,9 @@ on:
       - next
       - develop
 
+permissions:
+  pull-requests: write
+
 jobs:
   pr-policy-check:
     runs-on: ubuntu-latest
