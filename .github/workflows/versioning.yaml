@@ -5,6 +5,8 @@ on:
     branches:
       - main
       - next
+    paths-ignore:
+      - '.github/**'
 
 permissions:
   contents: write
