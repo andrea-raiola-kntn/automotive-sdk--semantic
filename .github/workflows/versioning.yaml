@@ -7,6 +7,9 @@ on:
       - next
     paths-ignore:
       - '.github/**'
+      - '.releaserc.json'
+      - 'package.json'
+      - 'yarn.json'
 
 permissions:
   contents: write
