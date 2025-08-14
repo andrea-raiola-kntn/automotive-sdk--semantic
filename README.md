@@ -51,13 +51,14 @@ flowchart LR
         H[hotfix/*] --> M
     end
 
-    D[develop] --> N[next (rc)]
-    N --> M[main (stable)]
+    D[develop] --> N["next (rc)"]
+    N --> M["main (stable)"]
 
     M -. merge .-> D
     N -. merge .-> D
     M -. merge .-> N
     H --> M
+
 ```
 
 ## Security
