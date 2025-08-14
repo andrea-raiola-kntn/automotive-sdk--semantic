@@ -43,6 +43,7 @@ Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines on how to contrib
 Please read our [Code of Conduct](./CODE_OF_CONDUCT.md) to help us maintain a welcoming community.
 
 ## Github Flow
+```mermaid
 flowchart LR
     subgraph Branches
         F[feature/*] --> D
@@ -57,6 +58,7 @@ flowchart LR
     N -. merge .-> D
     M -. merge .-> N
     H --> M
+```
 
 ## Security
 
