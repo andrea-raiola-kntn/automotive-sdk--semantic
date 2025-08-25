@@ -12,7 +12,7 @@ robolectric = "4.15.1"
 roomRuntime = "2.7.2"
 runner = "1.6.2"
 startupRuntime = "1.2.0"
-dagger = "2.57"
+dagger = "2.57.1"
 
 
 [libraries]
