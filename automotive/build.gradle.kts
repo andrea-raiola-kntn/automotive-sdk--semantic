@@ -11,6 +11,7 @@ plugins {
     id("org.jetbrains.dokka")
     id("maven-publish")
     jacoco
+    signing
 }
 
 kotlin {
@@ -52,10 +53,37 @@ publishing {
         }
     }
 
+    signing {
+        val privateKeyFile = File("/tmp/private.key")
+        val passphraseFile = File("/tmp/passphrase.txt")
+
+        if (privateKeyFile.exists() && passphraseFile.exists()) {
+            val privateKey = privateKeyFile.readText(Charsets.UTF_8)
+            val passphrase = passphraseFile.readText(Charsets.UTF_8).trim()
+
+            useInMemoryPgpKeys(privateKey, passphrase)
+
+            val flavor = System.getenv("FLAVOR")?.lowercase() ?: "core"
+
+            println(publishing.publications)
+            publishing.publications
+                .filter { it.name.lowercase().contains(flavor) }
+                .forEach { publication ->
+                    sign(publication)
+                }
+        }
+    }
+
+    afterEvaluate {
+        tasks.withType<PublishToMavenRepository>().configureEach {
+            dependsOn(tasks.withType<Sign>())
+        }
+    }
+
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/lorenzopaolo-cocchinone/automotive-sdk")
+            url = uri("https://maven.pkg.github.com/andrea-raiola-kntn/automotive-sdk--semantic")
             credentials {
                 username = System.getenv("USERNAME_GITHUB")
                 password = System.getenv("TOKEN_GITHUB")
