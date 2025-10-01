@@ -1,3 +1,22 @@
+# [1.16.0](https://github.com/andrea-raiola-kntn/automotive-sdk--semantic/compare/v1.15.9...v1.16.0) (2025-10-01)
+
+
+### Bug Fixes
+
+* skibidi ([3670e36](https://github.com/andrea-raiola-kntn/automotive-sdk--semantic/commit/3670e36308ef6f1cbace4131467ad181c4cb1675))
+
+
+### Features
+
+* added signature for semantic-release. ([bd5c437](https://github.com/andrea-raiola-kntn/automotive-sdk--semantic/commit/bd5c4373a957a68727d15009650a879f65d0ece3))
+
+# [1.16.0-next.2](https://github.com/andrea-raiola-kntn/automotive-sdk--semantic/compare/v1.16.0-next.1...v1.16.0-next.2) (2025-10-01)
+
+
+### Bug Fixes
+
+* skibidi ([3670e36](https://github.com/andrea-raiola-kntn/automotive-sdk--semantic/commit/3670e36308ef6f1cbace4131467ad181c4cb1675))
+
 # [1.16.0-next.1](https://github.com/andrea-raiola-kntn/automotive-sdk--semantic/compare/v1.15.8...v1.16.0-next.1) (2025-10-01)
 
 
