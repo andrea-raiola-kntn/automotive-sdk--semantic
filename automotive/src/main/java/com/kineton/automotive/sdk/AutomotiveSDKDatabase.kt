@@ -10,3 +10,4 @@ import com.kineton.automotive.sdk.entities.User
 abstract class AutomotiveSDKDatabase : RoomDatabase() {
     abstract fun getUserDao(): RoomUserDao
 }
+

@@ -39,7 +39,7 @@ publishing {
                 from(components["coreRelease"])
             }
             groupId = "com.kineton.automotive"
-            artifactId = "sdk"
+            artifactId = "sdk-semantic"
             version = libraryVersion
         }
 
@@ -48,7 +48,7 @@ publishing {
                 from(components["coreDebug"])
             }
             groupId = "com.kineton.automotive"
-            artifactId = "sdk"
+            artifactId = "sdk-semantic"
             version = "$libraryVersion-debug"
         }
     }
