@@ -33,8 +33,55 @@ jobs:
       - name: Grant execute permission to gradlew
         run: chmod +x ./gradlew
 
-      - name: Publish package
-        run: ./gradlew publishAllPublicationsToGitHubPackagesRepository
+      - name: Extract flavor and assign secrets
+        id: flavor
+        run: |
+          if [[ "${GITHUB_REF_NAME}" == "main" || "${GITHUB_REF_NAME}" == "next" ]]; then
+            FLAVOR="core"
+          else
+            FLAVOR="${GITHUB_REF_NAME##*/}"
+          fi
+          
+          FLAVOR_UPPER=$(echo "$FLAVOR" | tr '[:lower:]' '[:upper:]')
+          
+          echo "flavor=$FLAVOR" >> $GITHUB_OUTPUT
+          
+          #Gradle verification to sign the flavor
+          echo "FLAVOR=$FLAVOR" >> $GITHUB_ENV 
+          
+          echo "flavor_upper=$FLAVOR_UPPER" >> $GITHUB_OUTPUT
+          
+          KEY_VAR="GPG_PRIVATE_KEY_${FLAVOR_UPPER}"
+          PASSPHRASE_VAR="GPG_PASSPHRASE_${FLAVOR_UPPER}"
+          
+          GPG_PRIVATE_KEY="${!KEY_VAR}"
+          GPG_PASSPHRASE="${!PASSPHRASE_VAR}"
+          
+          printf '%s' "$GPG_PRIVATE_KEY" > /tmp/private.key
+          printf '%s' "$GPG_PASSPHRASE" > /tmp/passphrase.txt
+          
+          chmod 600 /tmp/private.key
+          chmod 600 /tmp/passphrase.txt
+        env:
+          GPG_PRIVATE_KEY_CORE: ${{ secrets.GPG_PRIVATE_KEY_CORE }}
+          GPG_PASSPHRASE_CORE: ${{ secrets.GPG_PASSPHRASE_CORE }}
+
+      - name: Publish flavor ${{ steps.flavor.outputs.flavor }}
+        run: |
+          set -e
+          
+          FLAVOR="${{ steps.flavor.outputs.flavor }}"
+          FLAVOR_CAP="${FLAVOR^}"
+          
+          echo "Publishing $FLAVOR_CAP Debug & Release"
+          
+          ./gradlew \
+            publish${FLAVOR_CAP}DebugPublicationToGitHubPackagesRepository \
+            publish${FLAVOR_CAP}ReleasePublicationToGitHubPackagesRepository \
+            --stacktrace --info
+          
+          echo "Clean up temporary GPG files"
+          rm -f /tmp/private.key /tmp/passphrase.txt
         env:
           USERNAME_GITHUB: ${{ github.actor }}
           TOKEN_GITHUB: ${{ secrets.GITHUB_TOKEN }}

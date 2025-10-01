@@ -1,9 +1,9 @@
-## [1.15.9](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.15.8...v1.15.9) (2025-08-14)
+# [1.16.0-next.1](https://github.com/andrea-raiola-kntn/automotive-sdk--semantic/compare/v1.15.8...v1.16.0-next.1) (2025-10-01)
+
 
 
 ### Bug Fixes
 
-* fake fix [#4](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/issues/4) ([dfcd462](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/commit/dfcd462a18ab1b0ee46491f169486c19db9a211f))
 
 ## [1.15.9-next.1](https://github.com/lorenzopaolo-cocchinone/automotive-sdk/compare/v1.15.8...v1.15.9-next.1) (2025-08-14)
 
