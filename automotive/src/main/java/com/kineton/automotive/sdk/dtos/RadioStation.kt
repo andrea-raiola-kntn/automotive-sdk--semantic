@@ -10,7 +10,7 @@ data class RadioStation(
     val name: String,
 
     @param:JsonProperty("description")
-    val description: String,
+    val description: String = "",
 
     @param:JsonProperty("alphanumericKey")
     val alphanumericKey: String?,
