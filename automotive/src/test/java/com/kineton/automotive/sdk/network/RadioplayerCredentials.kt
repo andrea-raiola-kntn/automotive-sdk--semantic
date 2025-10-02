@@ -35,7 +35,7 @@ object RadioplayerCredentials {
     private fun getEnvOrProp(key: String): String {
         return System.getenv(key)
             ?: props.getProperty(key)
-            ?: error("Missing required credential: $key")
+            ?: error("Missing required credentias: $key")
     }
 
     val username: String get() = getEnvOrProp("RADIOPLAYER_USERNAME")
