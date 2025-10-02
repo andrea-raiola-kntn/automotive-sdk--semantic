@@ -1,3 +1,10 @@
+# [1.17.0-next.1](https://github.com/andrea-raiola-kntn/automotive-sdk--semantic/compare/v1.16.0...v1.17.0-next.1) (2025-10-02)
+
+
+### Features
+
+* zio pera ([6384b7c](https://github.com/andrea-raiola-kntn/automotive-sdk--semantic/commit/6384b7c97c5525e85aeb40f228ce8e7da71e4ebd))
+
 # [1.16.0](https://github.com/andrea-raiola-kntn/automotive-sdk--semantic/compare/v1.15.9...v1.16.0) (2025-10-01)
 
 
